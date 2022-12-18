@@ -1,3 +1,4 @@
+import './Login.css';
 import {useState} from 'react';
 
 const Login = () => {
@@ -10,22 +11,24 @@ const Login = () => {
     }
     
     return (
+        <div className="bg">
         <form onSubmit={handleSubmit}>
-            <h1>Login</h1>
+            <h1 className="text-white">Login</h1>
             <div>
-                <label>
+                <label className="text-white">
                     Username:
                     <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
                 </label>
             </div>
             <div>
-                <label>
+                <label className="text-white">
                     Password:
                     <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
                 </label>
             </div>
             <input type="submit" className="btn btn-primary" value="Login" />
-        </form>
+            </form>
+        </div>
     )
 }
 
