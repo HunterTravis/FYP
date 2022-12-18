@@ -5,12 +5,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    background-attachment: fixed;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-
+    overflow: hidden;
 }
 .login{
     font-size: 300%;

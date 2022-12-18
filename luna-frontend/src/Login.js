@@ -11,7 +11,9 @@ const Login = () => {
     }
     
     return (
-        <div className="bg row justify-content-center">
+        <div className="bg">
+        <div className="row h-100 justify-content-center">
+
             <div id="loginPageContainer" className="col-3">
                 <img src="images/logo.png" alt="Could not load logo" className="logo"/>
                 <h1 className="text-white login text-center">Login</h1>
@@ -44,11 +46,12 @@ const Login = () => {
             <div>
             <label className="text-white">
             Password:
-                    <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-                </label>
+            <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+            </label>
             </div>
             <input type="submit" className="btn btn-primary" value="Login" />
-            </form> */}
+        </form> */}
+        </div>
         </div>
     )
 }
