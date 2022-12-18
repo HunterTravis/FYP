@@ -50,7 +50,7 @@ const Login = () => {
             </label>
             </div>
             <input type="submit" className="btn btn-primary" value="Login" />
-        </form> */}
+            </form> */}
         </div>
         </div>
     )

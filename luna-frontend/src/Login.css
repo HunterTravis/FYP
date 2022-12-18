@@ -1,5 +1,6 @@
 .bg {
     background-image: url(../public/images/bg.jpg);
+<<<<<<< HEAD
     height:100vh;
     width:100vw;
     background-size: cover;
@@ -23,4 +24,12 @@ input{
 }
 label{
     font-size:102%;
+=======
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+>>>>>>> 9c0b9318a86a21097aa93193332582b31351f2b7
 }
