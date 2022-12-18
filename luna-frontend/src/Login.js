@@ -14,7 +14,7 @@ const Login = () => {
         <div className="bg">
         <div className="row h-100 justify-content-center">
 
-            <div id="loginPageContainer" className="col-3">
+            <div id="loginPageContainer" className="col-lg-3 col-9">
                 <img src="images/logo.png" alt="Could not load logo" className="logo"/>
                 <h1 className="text-white login text-center">Login</h1>
                 <form onSubmit={handleSubmit} className="loginForm">
