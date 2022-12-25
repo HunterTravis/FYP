@@ -4,3 +4,51 @@
     height: 100vh;
     font-size: 20px;
 }
+
+.challan-card_header {
+    background-color: #1fc6cc;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.challan-card_body table {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.challan-card_body th {
+    background-color: grey;
+    color: white;
+    padding: 10px;
+}
+
+.challan-card_body th, td {
+    padding: 10px;
+}
+
+.assignment-card {
+    background-color: #1fc6cc;
+    width: 60%;
+    padding: 5px 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 1px 2px 0 rgba(0, 0, 0, 0.19);
+}
+
+.assignment-card:hover {
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 3px 6px 0 rgba(0, 0, 0, 0.19);
+}
+
+.assignment-card #title, #course, #due-date {
+    width: max-content; 
+}
+
+.assignment-card .description {
+    width: 80%;
+}
+
+.assignment-card #due-date {
+    text-align: right;
+    font-weight: bold;
+}

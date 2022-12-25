@@ -3,7 +3,6 @@ import Dashboard from './Pages/Dashboard';
 import Home from './Pages/HomeDisplay';
 import CourseRegistration from './Pages/CourseRegistration';
 import Assignments from './Pages/Assignments';
-import { Routes, Route } from 'react-router-dom';
 import Attendance from './Pages/Attendance';
 import CardIssueRequest from './Pages/CardIssueRequest';
 import CourseFeedback from './Pages/CourseFeedback';
@@ -15,6 +14,7 @@ import Marks from './Pages/Marks';
 import TentativeStudyPlan from './Pages/TentativeStudyPlan';
 import GradeChangeRequest from './Pages/GradeChangeRequest';
 import Transcript from './Pages/Transcript';
+import { Routes, Route } from 'react-router-dom';
 
 
 
@@ -38,9 +38,6 @@ function App() {
         <Route path='/plan' element={<TentativeStudyPlan/>} />
         <Route path='/grade-change' element={<GradeChangeRequest/>} />
         <Route path='/transcript' element={<Transcript/>} />
-
-
-
       </Routes>
     </div>
   );
