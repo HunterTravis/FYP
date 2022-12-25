@@ -1,58 +1,24 @@
+import ChallanCard from "../Components/ChallanCard";
+import Sidebar from "../Components/Sidebar";
+
+const challanData = {
+  sno: "1",
+  amount: "50000",
+  generatedOn: "17-Aug-2022",
+  dueDate: "20-Oct-2022",
+  paymentStatus: "Paid",
+};
+
 const FeeChallan = () => {
-    return (
-      <><div className="fee-hallan">
+  return (
+    <div className="fee-challan d-flex">
+      <Sidebar />
+      <div className="container">
+        <h1>Fee Challan</h1>
+        <ChallanCard data={challanData} />
       </div>
-        <div className="DisplayContainer">
-          <h1 id='home-greeting'>
-          Fee Challan
-          </h1>
-          <div className="sidebar">
-            <div className="container">
-            <div className="sidebar-item">
-                      <a href="*" className="home">Home</a>
-                  </div>
-                  <div className="sidebar-item">
-                    <a href="*" className="registration">Course Registration</a>
-                </div>
-                  <div className="sidebar-item">
-                      <a href="*" className="attendance">Attendance</a>
-                  </div>
-                  <div className="sidebar-item">
-                      <a href="*" className="marks">Marks</a>
-                  </div>
-                  <div className="sidebar-item">
-                      <a href="*" className="transcript">Transcript</a>
-                  </div>
-                  <div className="sidebar-item">
-                      <a href="*" className="fee-details">Fee Details</a>
-                  </div>
-                  <div className="sidebar-item">
-                      <a href="*" className="feedback">Course Feedback</a>
-                  </div>
-                  <div className="sidebar-item">
-                      <a href="*" className="withdraw">Course Withdraw</a>
-                  </div>
-                  <div className="sidebar-item">
-                      <a href="*" className="grade-change">Grade Change Request</a>
-                  </div>
-                  <div className="sidebar-item">
-                      <a href="*" className="plan">Tentative Study Plan</a>
-                  </div>
-                  <div className="sidebar-item">
-                    <a href="*" className="assignments">Assigments</a>
-                </div>
-                  <div className="sidebar-item">
-                      <a href="*" className="card-change">Card Issue Request</a>
-                  </div>
-                  <div className="sidebar-item">
-                      <a href="*" className="repository">Course Repository</a>
-                  </div>
-              </div>
-          </div>
-        
-        </div></>
-    );
-  }
-  
-  
-  export default FeeChallan;
+    </div>
+  );
+};
+
+export default FeeChallan;

@@ -1,58 +1,36 @@
-const Assignments = () => {
-    return (
-      <><div className="assignments">
-      </div>
-        <div className="DisplayContainer">
-          <h1 id='home-greeting'>
-           Assignments
-          </h1>
-          <div className="sidebar">
-            <div className="container">
-            <div className="sidebar-item">
-                      <a href="*" className="home">Home</a>
-                  </div>
-                  <div className="sidebar-item">
-                    <a href="*" className="registration">Course Registration</a>
-                </div>
-                  <div className="sidebar-item">
-                      <a href="*" className="attendance">Attendance</a>
-                  </div>
-                  <div className="sidebar-item">
-                      <a href="*" className="marks">Marks</a>
-                  </div>
-                  <div className="sidebar-item">
-                      <a href="*" className="transcript">Transcript</a>
-                  </div>
-                  <div className="sidebar-item">
-                      <a href="*" className="fee-challan">Fee Challan</a>
-                  </div>
-                  <div className="sidebar-item">
-                      <a href="*" className="fee-details">Fee Details</a>
-                  </div>
-                  <div className="sidebar-item">
-                      <a href="*" className="feedback">Course Feedback</a>
-                  </div>
-                  <div className="sidebar-item">
-                      <a href="*" className="withdraw">Course Withdraw</a>
-                  </div>
-                  <div className="sidebar-item">
-                      <a href="*" className="grade-change">Grade Change Request</a>
-                  </div>
-                  <div className="sidebar-item">
-                      <a href="*" className="plan">Tentative Study Plan</a>
-                  </div>
-                  <div className="sidebar-item">
-                      <a href="*" className="card-change">Card Issue Request</a>
-                  </div>
-                  <div className="sidebar-item">
-                      <a href="*" className="repository">Course Repository</a>
-                  </div>
-              </div>
-          </div>
-        
-        </div></>
-    );
+import Sidebar from "../Components/Sidebar";
+import AssignmentCard from "../Components/AssignmentCard";
+
+const assignmentData = [
+  {
+    title:'Assignment 3',
+    course:'PPIT Fall 22',
+    dueDate:'Sunday, Nov 23'
+  },
+  {
+    title:'Term Project Proposal',
+    course:'Information Security Fall 22',
+    dueDate:'Sunday, Nov 23'
+  },
+  {
+    title:'Project Presentation',
+    course:'DDR BSE-7A',
+    dueDate:'Thursday, Dec 17'
   }
-  
-  
-  export default Assignments;
+]
+
+const Assignments = () => {
+  return (
+    <div className="assignments d-flex">
+      <Sidebar />
+      <div className="container">
+        <h1>Assignments</h1>
+        <AssignmentCard data={assignmentData[0]} />
+        <AssignmentCard data={assignmentData[1]} />
+        <AssignmentCard data={assignmentData[2]} />
+      </div>
+    </div>
+  );
+};
+
+export default Assignments;
