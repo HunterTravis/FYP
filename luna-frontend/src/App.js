@@ -33,11 +33,11 @@ function App() {
         <Route path='/repository' element={<CourseRepository />} />
         <Route path='/withdraw' element={<CourseWithdraw />} />
         <Route path='/fee-challan' element={<FeeChallan />} />
-        <Route path='/fee-details' element={<FeeDetails/>} />
-        <Route path='/marks' element={<Marks/>} />
-        <Route path='/plan' element={<TentativeStudyPlan/>} />
-        <Route path='/grade-change' element={<GradeChangeRequest/>} />
-        <Route path='/transcript' element={<Transcript/>} />
+        <Route path='/fee-details' element={<FeeDetails />} />
+        <Route path='/marks' element={<Marks />} />
+        <Route path='/plan' element={<TentativeStudyPlan />} />
+        <Route path='/grade-change' element={<GradeChangeRequest />} />
+        <Route path='/transcript' element={<Transcript />} />
 
 
 
