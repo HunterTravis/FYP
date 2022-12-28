@@ -1,4 +1,3 @@
-// import Sidebar from "../Components/Sidebar";'
 import AssignmentCard from "../Components/AssignmentCard";
 
 const assignmentData = [
@@ -22,7 +21,6 @@ const assignmentData = [
 const Assignments = () => {
   return (
     <div className="assignments">
-      {/* <Sidebar /> */}
       <div className="container">
         <h1>Assignments</h1>
         <AssignmentCard data={assignmentData[0]} />
