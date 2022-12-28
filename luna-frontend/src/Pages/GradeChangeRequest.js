@@ -1,5 +1,4 @@
 import GradeCard from "../Components/GradeCard";
-import Sidebar from "../Components/Sidebar";
 
 
 const grdaeChange = [
@@ -14,8 +13,7 @@ const grdaeChange = [
 
 const GradeChangeRequest = () => {
   return (
-    <div className="grade-change d-flex">
-      <Sidebar />
+    <div className="grade-change">
       <div className="container">
         <GradeCard data={grdaeChange[0]} />
       </div>

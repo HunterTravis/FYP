@@ -1,4 +1,3 @@
-import Sidebar from "../Components/Sidebar";
 import TentativePlan from "../Components/TentativePlan";
 
 const planData = [
@@ -24,8 +23,7 @@ const planData = [
 
 const TentativeStudyPlan = () => {
   return (
-    <div className="plan d-flex">
-      <Sidebar />
+    <div className="plan">
       <div className="container">
         <h1>Tentative Study Plan</h1>
         <TentativePlan data={planData[0]} />

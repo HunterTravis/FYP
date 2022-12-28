@@ -1,6 +1,4 @@
 import WithdrawCard from "../Components/WithdrawCard";
-import Sidebar from "../Components/Sidebar";
-
 
 const WithdrawData = [
   {
@@ -14,8 +12,7 @@ const WithdrawData = [
 
 const CourseWithdraw = () => {
   return (
-    <div className="withdraw d-flex">
-      <Sidebar />
+    <div className="withdraw">
       <div className="container">
         <WithdrawCard data={WithdrawData[0]} />
       </div>

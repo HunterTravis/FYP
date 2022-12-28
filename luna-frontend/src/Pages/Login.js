@@ -29,10 +29,6 @@ const Login = () => {
                                 <label htmlFor="InputPassword" className="text-white  mt-2">Password:</label>
                             <input type="password" className="form-control" id="InputPassword" placeholder="********" value={password}  onChange={(e)=> setPassword(e.target.value)}/>
                         </div>
-                        {/* <div className="form-check">
-                            <input type="checkbox" className="form-check-input mt-2" id="NotRobot"/>
-                            <label className="form-check-label text-white mt-1" htmlFor="NotRobot">I'm not a robot</label>
-                        </div> */}
                         <div className="form-check">
                             <input type="checkbox" className="form-check-input mt-2" id="RememberMe"/>
                             <label className="form-check-label text-white mt-1" htmlFor="RememberMe">Remember Me</label>
