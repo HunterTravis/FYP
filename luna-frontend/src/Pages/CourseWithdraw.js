@@ -1,58 +1,26 @@
+import WithdrawCard from "../Components/WithdrawCard";
+import Sidebar from "../Components/Sidebar";
+
+
+const WithdrawData = [
+  {
+    code:'CL117',
+    cname:'Applied Physics',
+    chours:'1',
+    type:'core'
+  },
+
+]
+
 const CourseWithdraw = () => {
-    return (
-      <><div className="withdraw">
+  return (
+    <div className="withdraw d-flex">
+      <Sidebar />
+      <div className="container">
+        <WithdrawCard data={WithdrawData[0]} />
       </div>
-        <div className="DisplayContainer">
-          <h1 id='home-greeting'>
-          Course Withdraw
-          </h1>
-          <div className="sidebar">
-            <div className="container">
-            <div className="sidebar-item">
-                      <a href="*" className="home">Home</a>
-                  </div>
-                  <div className="sidebar-item">
-                    <a href="*" className="registration">Course Registration</a>
-                </div>
-                  <div className="sidebar-item">
-                      <a href="*" className="attendance">Attendance</a>
-                  </div>
-                  <div className="sidebar-item">
-                      <a href="*" className="marks">Marks</a>
-                  </div>
-                  <div className="sidebar-item">
-                      <a href="*" className="transcript">Transcript</a>
-                  </div>
-                  <div className="sidebar-item">
-                      <a href="*" className="fee-challan">Fee Challan</a>
-                  </div>
-                  <div className="sidebar-item">
-                      <a href="*" className="fee-details">Fee Details</a>
-                  </div>
-                  <div className="sidebar-item">
-                      <a href="*" className="feedback">Course Feedback</a>
-                  </div>
-                  <div className="sidebar-item">
-                      <a href="*" className="grade-change">Grade Change Request</a>
-                  </div>
-                  <div className="sidebar-item">
-                      <a href="*" className="plan">Tentative Study Plan</a>
-                  </div>
-                  <div className="sidebar-item">
-                    <a href="*" className="assignments">Assigments</a>
-                </div>
-                  <div className="sidebar-item">
-                      <a href="*" className="card-change">Card Issue Request</a>
-                  </div>
-                  <div className="sidebar-item">
-                      <a href="*" className="repository">Course Repository</a>
-                  </div>
-              </div>
-          </div>
-        
-        </div></>
-    );
-  }
-  
-  
-  export default CourseWithdraw;
+    </div>
+  );
+};
+
+export default CourseWithdraw;
