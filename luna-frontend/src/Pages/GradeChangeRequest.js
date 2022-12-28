@@ -1,15 +1,13 @@
 import GradeCard from "../Components/GradeCard";
 
-
 const grdaeChange = [
   {
-    code:'CL117',
-    cname:'Applied Physics',
-    chours:'1',
-    type:'core'
+    code: "CL117",
+    cname: "Applied Physics",
+    chours: "1",
+    type: "core",
   },
-
-]
+];
 
 const GradeChangeRequest = () => {
   return (
