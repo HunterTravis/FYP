@@ -1,6 +1,6 @@
 import WithdrawCard from "../Components/WithdrawCard";
 
-const RegisteredCourses = [
+const registeredCourses = [
   {
     code:'CS302',
     cname:'Information Security',
@@ -19,7 +19,6 @@ const RegisteredCourses = [
     chours:'3',
     type:'Elective'
   }
-
 ]
 
 const CourseWithdraw = () => {
@@ -27,7 +26,7 @@ const CourseWithdraw = () => {
     <div className="withdraw">
       <div className="container">
         <h1>Course Withdrawal</h1>
-        <WithdrawCard data={RegisteredCourses} />
+        <WithdrawCard data={registeredCourses} />
       </div>
     </div>
   );

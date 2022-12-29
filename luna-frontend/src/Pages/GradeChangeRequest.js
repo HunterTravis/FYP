@@ -1,19 +1,32 @@
 import GradeCard from "../Components/GradeCard";
 
-const grdaeChange = [
+const registeredCourses = [
   {
-    code: "CL117",
-    cname: "Applied Physics",
-    chours: "1",
-    type: "core",
+    code:'CS302',
+    cname:'Information Security',
+    chours:'3',
+    type:'Core'
   },
-];
+  {
+    code:'CS402',
+    cname:'Professional Practices in IT',
+    chours:'3',
+    type:'Core'
+  },
+  {
+    code:'CS502',
+    cname:'Design Defects and Restructuring',
+    chours:'3',
+    type:'Elective'
+  }
+]
 
 const GradeChangeRequest = () => {
   return (
     <div className="grade-change">
       <div className="container">
-        <GradeCard data={grdaeChange[0]} />
+        <h1>Grade Change Request</h1>
+        <GradeCard data={registeredCourses} />
       </div>
     </div>
   );
