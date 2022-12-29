@@ -4,75 +4,6 @@ const HomeDisplay = () => {
       <div className="home"></div>
       <div className="DisplayContainer">
         <h1 id="home-greeting">Welcome back | Student Profile</h1>
-        <div className="sidebar">
-          <div className="container">
-            <div className="sidebar-item">
-              <a href="*" className="registration">
-                Course Registration
-              </a>
-            </div>
-            <div className="sidebar-item">
-              <a href="*" className="attendance">
-                Attendance
-              </a>
-            </div>
-            <div className="sidebar-item">
-              <a href="*" className="marks">
-                Marks
-              </a>
-            </div>
-            <div className="sidebar-item">
-              <a href="*" className="transcript">
-                Transcript
-              </a>
-            </div>
-            <div className="sidebar-item">
-              <a href="*" className="fee-challan">
-                Fee Challan
-              </a>
-            </div>
-            <div className="sidebar-item">
-              <a href="*" className="fee-details">
-                Fee Details
-              </a>
-            </div>
-            <div className="sidebar-item">
-              <a href="*" className="feedback">
-                Course Feedback
-              </a>
-            </div>
-            <div className="sidebar-item">
-              <a href="*" className="withdraw">
-                Course Withdraw
-              </a>
-            </div>
-            <div className="sidebar-item">
-              <a href="*" className="grade-change">
-                Grade Change Request
-              </a>
-            </div>
-            <div className="sidebar-item">
-              <a href="*" className="plan">
-                Tentative Study Plan
-              </a>
-            </div>
-            <div className="sidebar-item">
-              <a href="*" className="assignments">
-                Assigments
-              </a>
-            </div>
-            <div className="sidebar-item">
-              <a href="*" className="card-change">
-                Card Issue Request
-              </a>
-            </div>
-            <div className="sidebar-item">
-              <a href="*" className="repository">
-                Course Repository
-              </a>
-            </div>
-          </div>
-        </div>
         <div className="home-current-info">
           <h2 className="current-class">University Information</h2>
           <h3 className="current-class">Roll No: 19k-1107</h3>
@@ -115,6 +46,7 @@ const HomeDisplay = () => {
             <img
               id="path-graphic"
               src="https://recess-images.imgix.net/icons/general/education_path.svg?ixlib=rails-2.1.4&auto=compress%2Cformat"
+              alt="Education path"
             />
           </div>
           <div id="path-info-container">
@@ -125,10 +57,10 @@ const HomeDisplay = () => {
         <div id="help-section">
           <h2>Help</h2>
           <div>
-            <a href="#">FAQ</a>
+            <a href="*">FAQ</a>
           </div>
           <div>
-            <a href="#">Contact us</a>
+            <a href="*">Contact us</a>
           </div>
         </div>
       </div>

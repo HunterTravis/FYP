@@ -5,26 +5,41 @@
     font-size: 20px;
 }
 
-.challan-card_header {
-    background-color: #1fc6cc;
-    color: white;
-    padding: 10px;
-    text-align: center;
+.challan-card, .withdraw-card {
+    margin-top: 20px;
 }
 
-.challan-card_body table {
+.marks-card__header, .withdraw-card__header, .challan-card__header {
+    background-color: #0b5271;
+    height: 50px;
+    align-items: center;
+    padding: 0 10px;
+    color: white;
+}
+
+.challan-card__body, .withdraw-card__body {
+    background-color: white;
+    padding: 10px;
+}
+
+.challan-card__body table, .accordion-body table, .withdraw-card__body table {
     margin-top: 10px;
     text-align: center;
 }
 
-.challan-card_body th {
-    background-color: grey;
+.challan-card__body th, .accordion-body th, .withdraw-card__body th {
+    background-color: rgb(144, 142, 142);
     color: white;
     padding: 10px;
 }
 
-.challan-card_body th, td {
+.challan-card__body td, .accordion-body td, .withdraw-card__body td {
+    background-color: white;
     padding: 10px;
+}
+
+.withdraw-card__body table tr td:nth-child(2), .withdraw-card__body table tr th:nth-child(2) {
+    text-align: left;
 }
 
 .assignment-card {
@@ -48,7 +63,34 @@
     width: 80%;
 }
 
-.assignment-card #due-date {
-    text-align: right;
-    font-weight: bold;
+
+.sidebar-layout {
+    display: flex;
+}
+
+
+
+.nav-tabs .nav-link {
+    color: white;
+    background-color: #0b5271;
+    text-decoration: none;
+    border-radius: 0px;
+    border: none;
+}
+
+.nav-tabs .nav-link:hover, .nav-tabs .nav-link:focus, .nav-tabs .nav-link.active {
+    color: white;
+    background-color: #0c678e;
+    text-decoration: none;
+    border: none;
+    border-radius: 0px;
+}
+
+.marks-card__body {
+    background-color: white;
+    padding: 10px;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
 }

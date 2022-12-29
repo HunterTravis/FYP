@@ -1,5 +1,4 @@
 import ChallanCard from "../Components/ChallanCard";
-import Sidebar from "../Components/Sidebar";
 
 const challanData = {
   sno: "1",
@@ -11,8 +10,7 @@ const challanData = {
 
 const FeeChallan = () => {
   return (
-    <div className="fee-challan d-flex">
-      <Sidebar />
+    <div className="fee-challan">
       <div className="container">
         <h1>Fee Challan</h1>
         <ChallanCard data={challanData} />

@@ -14,11 +14,17 @@ code {
 
 #root {
   height:100%;
+  width: 100%;
 }
 .App {
   text-align: center;
   height: 100%;
   color: #aad5e3;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
 }
 
 .DisplayContainer {
@@ -77,4 +83,27 @@ code {
 
 .app {
   background-color: lightgray;
+}
+
+.marks, .fee-challan, .withdraw, .assignments {
+  flex-grow: 1;
+}
+
+.assignment-cards-display {
+  margin-top: 30px;
+}
+
+#sem-select {
+  width: 150px;
+  height: 40px;
+  font-size: 14px;
+  text-align: center;
+  background-color: #0b5271;
+  color: lightgrey;
+  border: none;
+  border-radius: 5px;
+}
+
+#sem-select:focus {
+  outline: none;
 }
