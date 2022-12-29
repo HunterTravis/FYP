@@ -14,7 +14,7 @@ import Marks from "./Pages/Marks";
 import TentativeStudyPlan from "./Pages/TentativeStudyPlan";
 import GradeChangeRequest from "./Pages/GradeChangeRequest";
 import Transcript from "./Pages/Transcript";
-import Courses from "./Pages/Courses";
+import Courses from "./Pages/Courses/Courses";
 import SidebarLayout from "./Components/SidebarLayout";
 
 function App() {
