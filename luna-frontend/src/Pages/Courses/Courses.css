@@ -5,10 +5,8 @@
     width: 100%;
   }
   
-  .course-cards {
+.course-cards {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
-    width: 80%;
-    margin-top: 20px;
-  }
+    gap: 30px;margin-top: 20px;margin-bottom:30px;
+}
