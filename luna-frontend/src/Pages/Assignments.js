@@ -23,9 +23,11 @@ const Assignments = () => {
     <div className="assignments">
       <div className="container">
         <h1>Assignments</h1>
-        <AssignmentCard data={assignmentData[0]} />
-        <AssignmentCard data={assignmentData[1]} />
-        <AssignmentCard data={assignmentData[2]} />
+        <div className="assignment-cards-display">
+          <AssignmentCard data={assignmentData[0]} />
+          <AssignmentCard data={assignmentData[1]} />
+          <AssignmentCard data={assignmentData[2]} />
+        </div>
       </div>
     </div>
   );

@@ -1,26 +1,37 @@
-const WithdrawCard = (props) => {
-    return (
-      <div className="withdraw">
-        <div className="withdraw_header">
-          <h3>Course Withdrawl</h3>
-        </div>
-          <div className="withdraw_body">
-          <table>
-                    <tr>
-                        <th>Code</th>
-                        <th>Course Name</th>
-                        <th>Type</th>
-                    </tr>
-                    <tr>
-                        <td>{props.data.code}</td>
-                        <td>{props.data.cname}</td>
-                        <td>{props.data.type}</td>
-                        <td><button className="btn btn-primary">Withdraw Request</button></td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-      );
-  };
-  
-  export default WithdrawCard;
+const WithdrawCard = ({data}) => {
+  const courses = data;
+
+  return (
+    <div className="withdraw-card">
+      <div className="withdraw-card__header d-flex">
+        <h5>Student Withdraw Request</h5>
+      </div>
+      <div className="withdraw-card__body">
+        <table>
+          <tr>
+            <th>Code</th>
+            <th>Course Name</th>
+            <th>Type</th>
+            <th>Credit Hrs.</th>
+            <th>Withdraw</th>
+          </tr>
+          {courses.map((course) => {
+            return (
+              <tr>
+                <td>{course.code}</td>
+                <td>{course.cname}</td>
+                <td>{course.type}</td>
+                <td>{course.chours}</td>
+                <td>
+                  <button className="btn btn-primary">Withdraw Request</button>
+                </td>
+              </tr>
+            );
+          })}
+        </table>
+      </div>
+    </div>
+  );
+};
+
+export default WithdrawCard;

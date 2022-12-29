@@ -1,10 +1,10 @@
 const ChallanCard = (props) => {
   return (
     <div className="challan-card">
-      <div className="challan-card_header">
-        <h3>Student Challan</h3>
+      <div className="challan-card__header d-flex">
+        <h5>Student Challan</h5>
       </div>
-      <div className="challan-card_body">
+      <div className="challan-card__body">
         <table>
           <tr>
             <th>Challan No.</th>
