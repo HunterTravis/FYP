@@ -7,7 +7,6 @@ import { Routes, Route } from "react-router-dom";
 import Attendance from "./Pages/Attendance";
 import CardIssueRequest from "./Pages/CardIssueRequest";
 import CourseFeedback from "./Pages/CourseFeedback";
-import CourseRepository from "./Pages/CourseRepository";
 import CourseWithdraw from "./Pages/CourseWithdraw";
 import FeeChallan from "./Pages/FeeChallan";
 import FeeDetails from "./Pages/FeeDetails";
@@ -15,6 +14,7 @@ import Marks from "./Pages/Marks";
 import TentativeStudyPlan from "./Pages/TentativeStudyPlan";
 import GradeChangeRequest from "./Pages/GradeChangeRequest";
 import Transcript from "./Pages/Transcript";
+import Courses from "./Pages/Courses";
 import SidebarLayout from "./Components/SidebarLayout";
 
 function App() {
@@ -28,9 +28,9 @@ function App() {
           <Route path="/registration" element={<CourseRegistration />} />
           <Route path="/assignments" element={<Assignments />} />
           <Route path="/attendance" element={<Attendance />} />
+          <Route path="/courses" element={<Courses/>} />
           <Route path="/card-change" element={<CardIssueRequest />} />
           <Route path="/feedback" element={<CourseFeedback />} />
-          <Route path="/repository" element={<CourseRepository />} />
           <Route path="/withdraw" element={<CourseWithdraw />} />
           <Route path="/fee-challan" element={<FeeChallan />} />
           <Route path="/fee-details" element={<FeeDetails />} />

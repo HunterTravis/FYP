@@ -107,3 +107,19 @@ code {
 #sem-select:focus {
   outline: none;
 }
+
+::-webkit-scrollbar{
+  width:10px;
+}
+
+::-webkit-scrollbar-track{
+  background: #e0e0e0;
+}
+
+::-webkit-scrollbar-thumb{
+  background: #0b5271;
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background: #21a9e3;
+}
