@@ -4,7 +4,7 @@ import { Outlet } from "react-router-dom";
 
 const Layout = () => {
   return (
-    <div className="sidebar-layout">
+    <div className="layout">
       {/* <Navbar /> */}
       <div className="lower">
         <Sidebar />

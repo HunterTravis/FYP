@@ -85,7 +85,7 @@ code {
   background-color: lightgray;
 }
 
-.marks, .fee-challan, .withdraw, .assignments, .grade-change {
+.marks, .fee-challan, .withdraw, .assignments, .grade-change, .fee-details {
   flex-grow: 1;
 }
 
