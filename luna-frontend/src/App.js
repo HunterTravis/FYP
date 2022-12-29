@@ -15,14 +15,14 @@ import TentativeStudyPlan from "./Pages/TentativeStudyPlan";
 import GradeChangeRequest from "./Pages/GradeChangeRequest";
 import Transcript from "./Pages/Transcript";
 import Courses from "./Pages/Courses";
-import SidebarLayout from "./Components/SidebarLayout";
+import Layout from "./Components/Layout";
 
 function App() {
   return (
     <div className="app">
       <Routes>
         <Route path="/" element={<Login />} />
-        <Route element={<SidebarLayout />}>
+        <Route element={<Layout />}>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/home" element={<Home />} />
           <Route path="/registration" element={<CourseRegistration />} />
