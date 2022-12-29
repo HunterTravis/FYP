@@ -5,11 +5,11 @@
     font-size: 20px;
 }
 
-.challan-card, .withdraw-card {
+.challan-card, .withdraw-card, .grade-card {
     margin-top: 20px;
 }
 
-.marks-card__header, .withdraw-card__header, .challan-card__header {
+.marks-card__header, .withdraw-card__header, .challan-card__header, .grade-card__header {
     background-color: #0b5271;
     height: 50px;
     align-items: center;
@@ -17,28 +17,28 @@
     color: white;
 }
 
-.challan-card__body, .withdraw-card__body {
+.challan-card__body, .withdraw-card__body, .grade-card__body {
     background-color: white;
     padding: 10px;
 }
 
-.challan-card__body table, .accordion-body table, .withdraw-card__body table {
+.challan-card__body table, .accordion-body table, .withdraw-card__body table, .grade-card__body table {
     margin-top: 10px;
     text-align: center;
 }
 
-.challan-card__body th, .accordion-body th, .withdraw-card__body th {
+.challan-card__body th, .accordion-body th, .withdraw-card__body th, .grade-card__body th {
     background-color: rgb(144, 142, 142);
     color: white;
     padding: 10px;
 }
 
-.challan-card__body td, .accordion-body td, .withdraw-card__body td {
+.challan-card__body td, .accordion-body td, .withdraw-card__body td, .grade-card__body td {
     background-color: white;
     padding: 10px;
 }
 
-.withdraw-card__body table tr td:nth-child(2), .withdraw-card__body table tr th:nth-child(2) {
+.withdraw-card__body table tr td:nth-child(2), .withdraw-card__body table tr th:nth-child(2), .grade-card__body table tr td:nth-child(2), .grade-card__body table tr th:nth-child(2) {
     text-align: left;
 }
 
