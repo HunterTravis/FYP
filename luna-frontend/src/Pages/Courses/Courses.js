@@ -1,7 +1,7 @@
 import React from 'react';
 import CourseCard from '../../Components/CourseCard/CourseCard';
 import './Courses.css';
-
+import { Link } from 'react-router-dom';
 const dummyData = [
   {
     id: 1,
@@ -134,7 +134,9 @@ function Courses(props) {
         <h1>Courses</h1>
         <div className="course-cards mr-0">
           {data.map(course => (
-            <CourseCard key={course.id} {...course} />
+            <Link to={{ pathname: '/coursePage', state: { courseId: course.id } }}>
+              <CourseCard key={course.id} {...course} />
+            </Link>
           ))}
         </div>
       </div>

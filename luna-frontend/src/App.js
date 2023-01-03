@@ -16,6 +16,7 @@ import GradeChangeRequest from "./Pages/GradeChangeRequest";
 import Transcript from "./Pages/Transcript";
 import Courses from "./Pages/Courses/Courses";
 import Layout from "./Components/Layout";
+import CoursePage from "./Pages/CoursePage/CoursePage";
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
           <Route path="/plan" element={<TentativeStudyPlan />} />
           <Route path="/grade-change" element={<GradeChangeRequest />} />
           <Route path="/transcript" element={<Transcript />} />
+          <Route path="/coursePage" element={<CoursePage />} />
         </Route>
       </Routes>
     </div>
