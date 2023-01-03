@@ -134,7 +134,7 @@ function Courses(props) {
         <h1>Courses</h1>
         <div className="course-cards mr-0">
           {data.map(course => (
-            <Link to={{ pathname: '/coursePage', state: { courseId: course.id } }}>
+            <Link to='/coursePage' state={{ courseHead: course.courseName }}>
               <CourseCard key={course.id} {...course} />
             </Link>
           ))}

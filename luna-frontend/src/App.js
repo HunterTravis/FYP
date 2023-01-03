@@ -5,7 +5,7 @@ import Login from "./Pages/Login";
 import Dashboard from "./Pages/dashboard/index";
 import ProfileInformation from "./Pages/ProfileInformation";
 import CourseRegistration from "./Pages/CourseRegistration";
-import Assignments from "./Pages/Assignments";
+import Assignments from "./Pages/Assignments/Assignments";
 import { Routes, Route } from "react-router-dom";
 import Attendance from "./Pages/Attendance";
 import CardIssueRequest from "./Pages/CardIssueRequest";

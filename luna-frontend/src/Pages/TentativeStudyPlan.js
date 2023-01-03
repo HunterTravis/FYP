@@ -1,23 +1,24 @@
 import TentativePlan from "../Components/TentativePlan";
 
-const planData = [
+
+const plan = [
   {
-    code:'CL117',
-    cname:'Applied Physics',
-    chours:'1',
-    type:'core'
+    code:'CS302',
+    cname:'Information Security',
+    chours:'3',
+    type:'Core'
   },
   {
-    code:'CL117',
-    cname:'Applied Physics',
-    chours:'1',
-    type:'core'
+    code:'CS402',
+    cname:'Professional Practices in IT',
+    chours:'3',
+    type:'Core'
   },
   {
-    code:'CL117',
-    cname:'Applied Physics',
-    chours:'1',
-    type:'core'
+    code:'CS502',
+    cname:'Design Defects and Restructuring',
+    chours:'3',
+    type:'Elective'
   }
 ]
 
@@ -26,9 +27,7 @@ const TentativeStudyPlan = () => {
     <div className="plan">
       <div className="container">
         <h1>Tentative Study Plan</h1>
-        <TentativePlan data={planData[0]} />
-        <TentativePlan data={planData[1]} />
-        <TentativePlan data={planData[2]} />
+        <TentativePlan data={plan} />
       </div>
     </div>
   );
