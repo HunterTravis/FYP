@@ -20,7 +20,6 @@ import Transcript from "./Pages/Transcript";
 import Courses from "./Pages/Courses/Courses";
 import Layout from "./Components/Layout";
 import CoursePage from "./Pages/CoursePage/CoursePage";
-import Sidebar2 from "./Pages/global/Sidebar";
 import { useLocation } from "react-router-dom";
 
 function App() {
