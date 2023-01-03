@@ -3,13 +3,13 @@ import './CoursePage.css';
 import { useLocation } from 'react-router-dom';
 const CoursePage = ({ courseName, announcements, assignments, events, resources }) => {
   const location = useLocation();
-  const { courseId } = location.state;
+  const { courseHead } = location.state;
 
 
   return (
     <div>
       {/* Course name */}
-      <h1>{courseId}</h1>
+      <h1>{courseHead}</h1>
 
       
       {/* <h2>Announcements</h2>
