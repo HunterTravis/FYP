@@ -94,6 +94,15 @@ code {
 .assignment-cards-display {
   margin-top: 30px;
 }
+
+.sem-selector label {
+  margin: 0 5px;
+}
+
+.sem-selector label > input {
+  margin-right: 3px;
+}
+
 #sem-select {
   width: 150px;
   height: 40px;
