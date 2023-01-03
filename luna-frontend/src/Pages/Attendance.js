@@ -24,7 +24,7 @@ const attendance = [
 
 const CourseWithdraw = () => {
   return (
-    <div className="attenadnce">
+    <div className="attendance">
       <div className="container">
         <h1>Attendance</h1>
         <AttendanceCard data={attendance} />

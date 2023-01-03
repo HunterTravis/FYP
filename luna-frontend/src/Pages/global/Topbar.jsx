@@ -18,7 +18,7 @@ const Topbar = () => {
     <Box display="flex" className="topbar" justifyContent="space-between" p={2}>
       <Box
         display="flex"
-        height="50px"
+        height="5vh"
         borderRadius="3px"
       >
         <img src="images/logo.png" alt="LUNA"/>

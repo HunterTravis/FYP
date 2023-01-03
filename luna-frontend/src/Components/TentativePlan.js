@@ -1,4 +1,4 @@
-import TentativeStudyPlan from "../Pages/TentativeStudyPlan";
+// import TentativeStudyPlan from "../Pages/TentativeStudyPlan";
 
 const TentativePlan = ({data}) => {
   const courses = data;

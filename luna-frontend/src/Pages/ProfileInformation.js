@@ -1,10 +1,10 @@
 import { mockStudentData } from "../data/mockData";
 const ProfileInformation = () => {
   return (
-    <div className="home container">
+    <div className="profile-info">
 
-      <div className="DisplayContainer">
-        <h1 id="home-greeting">Welcome back | Student Profile</h1>
+      <div className="container DisplayContainer">
+        <h1>Welcome back | Student Profile</h1>
         <div className="home-current-info">
           <h2 className="current-class">University Information</h2>
           <h3 className="current-class">Roll No: {mockStudentData.UniversityInformation.RollNumber}</h3>

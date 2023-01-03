@@ -18,21 +18,21 @@ code {
   height:100%;
   width: 100%;
 }
-.App {
-  text-align: center;
+
+.app {
   height: 100%;
-  color: #aad5e3;
+  width: 100%;
 }
 
 .container {
   width: 100%;
   height: 100%;
   margin-top:4%;
+  margin-bottom: 4%;
 }
 
 .DisplayContainer {
   flex:4;
-  overflow:auto;
 }
 
 .DisplayContainer > div {
@@ -86,7 +86,8 @@ code {
 
 
 
-.transcript,.registration,.courses,.attendance ,.marks, .fee-challan, .withdraw, .assignments, .grade-change, .fee-details, .feedback, .plan  {
+.transcript,.registration, .profile-info, .courses,.attendance ,.marks, .fee-challan, .withdraw, .assignments, .grade-change, .fee-details, .feedback, .plan  {
+  margin-left: 190px;
   flex-grow: 1;
 }
 
@@ -122,20 +123,6 @@ code {
 
 ::-webkit-scrollbar-thumb:hover{
   background: #21a9e3;
-}
-
-
-
-
-.sidebar {
-  background-color: #1fc6cc;
-  width: 15%;
-  height: 100vh;
-  font-size: 20px;
-}
-
-.lower {
-  display: flex;
 }
 
 .challan-card, .withdraw-card, .grade-card {
@@ -194,11 +181,6 @@ code {
 
 .assignment-card .description {
   width: 80%;
-}
-
-
-.layout {
-  display: block;
 }
 
 
