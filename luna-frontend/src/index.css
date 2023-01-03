@@ -86,7 +86,7 @@ code {
 
 
 
-.transcript,.registration, .profile-info, .courses,.attendance ,.marks, .fee-challan, .withdraw, .assignments, .grade-change, .fee-details, .feedback, .plan  {
+.transcript,.registration, .profile-info, .courses, .course-page, .attendance ,.marks, .fee-challan, .withdraw, .assignments, .grade-change, .fee-details, .feedback, .plan  {
   margin-left: 190px;
   flex-grow: 1;
 }
