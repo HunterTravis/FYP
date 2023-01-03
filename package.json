@@ -15,7 +15,6 @@
     "@nivo/line": "^0.80.0",
     "@nivo/pie": "^0.80.0",
     "formik": "^2.2.9",
-    "react-pro-sidebar": "^1.0.0-alpha.9",
     "react-router-dom": "^6.6.1",
     "yup": "^0.32.11"
   }

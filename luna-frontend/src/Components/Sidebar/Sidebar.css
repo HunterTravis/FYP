@@ -1,0 +1,33 @@
+.container {
+    padding-top:10px;
+}
+.sidebar {
+    overflow:hidden;
+    position: fixed;
+    top:7.5%;
+    left: 0;
+    background-color: #003248;
+    width: 15%;
+    height: 100vh;
+    font-size: 20px;
+}
+.Sidebar-buttons{
+    color:white;
+    text-decoration: none;
+}
+
+.sidebar-item
+{
+    border:1px solid black;
+    text-decoration: none;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    transition: 0.3s;
+}
+.sidebar-item:hover{
+    background-color: #ffe600;
+}
+.Sidebar-buttons:hover{
+    color:black;
+}

@@ -6,7 +6,7 @@ const ChallanCard = (props) => {
       </div>
       <div className="challan-card__body">
         <table>
-          <tr>
+          <tr className="ChallanTable">
             <th>Challan No.</th>
             <th>Challan Amount</th>
             <th>Generated on</th>

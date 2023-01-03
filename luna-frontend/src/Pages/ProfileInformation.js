@@ -1,8 +1,8 @@
 import { mockStudentData } from "../data/mockData";
-const HomeDisplay = () => {
+const ProfileInformation = () => {
   return (
-    <>
-      <div className="home"></div>
+    <div className="home container">
+
       <div className="DisplayContainer">
         <h1 id="home-greeting">Welcome back | Student Profile</h1>
         <div className="home-current-info">
@@ -64,8 +64,8 @@ const HomeDisplay = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
-export default HomeDisplay;
+export default ProfileInformation;

@@ -1,6 +1,9 @@
+import { ColorModeContext, useMode } from "./theme";
+import { CssBaseline, ThemeProvider } from "@mui/material";
+import Topbar from "./Pages/global/Topbar";
 import Login from "./Pages/Login";
-import Dashboard from "./Pages/Dashboard";
-import Home from "./Pages/HomeDisplay";
+import Dashboard from "./Pages/dashboard/index";
+import ProfileInformation from "./Pages/ProfileInformation";
 import CourseRegistration from "./Pages/CourseRegistration";
 import Assignments from "./Pages/Assignments";
 import { Routes, Route } from "react-router-dom";
@@ -17,32 +20,45 @@ import Transcript from "./Pages/Transcript";
 import Courses from "./Pages/Courses/Courses";
 import Layout from "./Components/Layout";
 import CoursePage from "./Pages/CoursePage/CoursePage";
+import Sidebar2 from "./Pages/global/Sidebar";
+import { useLocation } from "react-router-dom";
 
 function App() {
+  const [theme, colorMode] = useMode();
   return (
-    <div className="app">
-      <Routes>
-        <Route path="/" element={<Login />} />
-        <Route element={<Layout />}>
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/registration" element={<CourseRegistration />} />
-          <Route path="/assignments" element={<Assignments />} />
-          <Route path="/attendance" element={<Attendance />} />
-          <Route path="/courses" element={<Courses/>} />
-          <Route path="/card-change" element={<CardIssueRequest />} />
-          <Route path="/feedback" element={<CourseFeedback />} />
-          <Route path="/withdraw" element={<CourseWithdraw />} />
-          <Route path="/fee-challan" element={<FeeChallan />} />
-          <Route path="/fee-details" element={<FeeDetails />} />
-          <Route path="/marks" element={<Marks />} />
-          <Route path="/plan" element={<TentativeStudyPlan />} />
-          <Route path="/grade-change" element={<GradeChangeRequest />} />
-          <Route path="/transcript" element={<Transcript />} />
-          <Route path="/coursePage" element={<CoursePage />} />
-        </Route>
-      </Routes>
-    </div>
+    <ColorModeContext.Provider value={colorMode}>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <div className="app">
+          <main className="content">
+            {useLocation().pathname !== "/" ? <Topbar/>:null}
+            
+            <Routes>
+              <Route path="/" element={<Login />} />
+
+              <Route element={<Layout />}>
+                <Route path="/dashboard" element={<Dashboard />} />
+                <Route path="/ProfileInformation" element={<ProfileInformation />} />
+                <Route path="/registration" element={<CourseRegistration />} />
+                <Route path="/assignments" element={<Assignments />} />
+                <Route path="/attendance" element={<Attendance />} />
+                <Route path="/courses" element={<Courses />} />
+                <Route path="/card-change" element={<CardIssueRequest />} />
+                <Route path="/feedback" element={<CourseFeedback />} />
+                <Route path="/withdraw" element={<CourseWithdraw />} />
+                <Route path="/fee-challan" element={<FeeChallan />} />
+                <Route path="/fee-details" element={<FeeDetails />} />
+                <Route path="/marks" element={<Marks />} />
+                <Route path="/plan" element={<TentativeStudyPlan />} />
+                <Route path="/grade-change" element={<GradeChangeRequest />} />
+                <Route path="/transcript" element={<Transcript />} />
+                <Route path="/coursePage" element={<CoursePage />} />
+              </Route>
+            </Routes>
+          </main>
+        </div>
+      </ThemeProvider>
+    </ColorModeContext.Provider>
   );
 }
 
