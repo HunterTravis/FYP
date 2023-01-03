@@ -1,9 +1,37 @@
+/* .sidebar {
+ 
+    box-shadow:4px 7px 10px rgba(25, 188, 166, 0.4);
+    
+} */
+
+/* Sidebar styles */
+
 .sidebar {
+    width: 200px; 
     background-color: #1fc6cc;
-    width: 15%;
     height: 100vh;
     font-size: 20px;
-}
+    padding: 20px; /* Add some padding to the sidebar */
+  }
+  
+
+  .sidebar a {
+    display:flow-root;
+    padding: 10px; 
+    color: rgb(102, 102, 102); 
+    text-decoration:double;
+  }
+  
+  .sidebar a:hover {
+    background-color: #ccc; 
+  }
+  
+  
+  .main-content {
+    margin-left: 200px;
+    padding: 20px; 
+  }
+  
 
 .lower {
     display: flex;
