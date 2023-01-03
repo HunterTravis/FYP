@@ -1,5 +1,6 @@
 .bg {
-    background-image: url(../../public/images/bg.jpg);
+    opacity: 1;
+    background-image: url(../../public/images/bg.png);
     height:100vh;
     width:100vw;
     background-size: cover;
