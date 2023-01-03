@@ -2,7 +2,7 @@
     padding-top:10px;
 }
 .sidebar {
-    overflow:hidden;
+    overflow:auto;
     position: fixed;
     top:7.5%;
     left: 0;
