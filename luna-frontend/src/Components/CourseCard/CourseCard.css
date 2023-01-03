@@ -22,7 +22,7 @@
   background-color: rgb(109, 136, 255);
 }
 
-.assignments {
+.course-assignments {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -33,7 +33,7 @@
   background-color: #fff;
 }
 
-.assignment {
+.course-assignment {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -46,7 +46,7 @@
   overflow: hidden;
 }
 
-.assignment-name {
+.course-assignment-name {
   width: 100%;
   text-align: center;
 }

@@ -85,12 +85,8 @@ code {
   background-color: lightgray;
 }
 
-.marks, .fee-challan, .withdraw, .assignments, .grade-change, .fee-details {
+.marks, .fee-challan, .withdraw, .grade-change, .fee-details {
   flex-grow: 1;
-}
-
-.assignment-cards-display {
-  margin-top: 30px;
 }
 
 #sem-select {
