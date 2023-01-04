@@ -78,7 +78,7 @@ const plan = [
 
 const Attendance = () => {
   return (
-    <div className="plan">
+    <div className="attendance">
       <div className="container">
         <h1>Attendance</h1>
         <AttendanceCard data={plan} />
