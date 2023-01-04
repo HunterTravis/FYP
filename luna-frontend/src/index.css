@@ -38,14 +38,17 @@ code {
 .DisplayContainer > div {
   border: solid #09857d 1px;
   border-radius: 3px;
-  margin: 3% 3%;
-  padding: 2% 0;
+  margin: 5% 5%;
+  padding: 4% 0;
+  border-color: #0b5271;
+  border-radius: 3;
+  border: 3px solid #0b5271;
 }
 
 #home-greeting {
   font-size:300%;
   font:bolder;
-  font-style:oblique;
+  font-style:normal;
   font-family: Georgia, 'Times New Roman', Times, serif;
   margin: 1.5em 0em;
 }
@@ -53,9 +56,23 @@ code {
 .current-class{
   font-size:170%;
   font:bolder;
-  font-style:oblique;
+  font-style:normal;
   font-family: Georgia, 'Times New Roman', Times, serif;
   margin: 1.5em 0em;
+}
+
+#path {
+  font-size:120%;
+  font:bolder;
+  font-style:normal;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  border: solid #09857d 1px;
+  border-radius: 3px;
+  margin: 5% 5%;
+  padding: 4% 0;
+  border-color: #0b5271;
+  border-radius: 3;
+  border: 3px solid #0b5271;
 }
 
 #path-graphic {
@@ -64,12 +81,15 @@ code {
 
 #path-info-container {
   display: flex;
-  flex-direction: row;
+
 }
 
-#path-info-container > h4 {
-  flex: 10;
-  margin: 1em 0;
+#path-graphic-container > h2 {
+  font-size:170%;
+  font:bolder;
+  font-style:normal;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin: 1.5em 0em; 
 }
 
 #prior-number {
@@ -83,8 +103,6 @@ code {
 #remaining-number {
   color: #0b5271;
 }
-
-
 
 .transcript,.registration, .profile-info, .courses, .course-page, .attendance ,.marks, .fee-challan, .withdraw, .assignments, .grade-change, .fee-details, .feedback, .plan  {
   margin-left: 190px;

@@ -1,4 +1,6 @@
+import './Profile.css';
 import { mockStudentData } from "../data/mockData";
+
 const ProfileInformation = () => {
   return (
     <div className="profile-info">
