@@ -30,7 +30,8 @@ const TranscriptCard = ({ data }) => {
                       <td>{course.cname}</td>
                       <td>{course.type}</td>
                       <td>{course.chours}</td>
-                      <td></td>
+                      <td>{course.point}</td>
+                      <td>{course.grade}</td>
                     </tr>
                   );
                 })}
