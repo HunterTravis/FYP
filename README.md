@@ -1,2 +1,3 @@
 # FYP
-A repository made for our idea of A Configurable Student Portal System.
+
+The idea for our FYP (Final Year Project) is to develop a unified and configurable Student Portal System.
