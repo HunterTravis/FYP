@@ -1,0 +1,19 @@
+.topbar{
+    overflow: hidden;
+  position: fixed; 
+  top: 0;
+  height:7.5%;
+  width: 100%;
+  background-color: #003248;
+}
+.linko:hover{
+  color:white;
+}
+.linko{
+  color:white;
+    text-decoration: none;
+}
+.buttono{
+  color:white;
+    text-decoration: none;
+}

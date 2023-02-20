@@ -1,0 +1,40 @@
+.home-current-info{
+    background-color: #0b5271;
+    height: 50px;
+    align-items: center;
+    padding: 0 10px;
+    color: white;
+    margin-top: 10px;
+    text-align: center;
+    border: solid;
+    box-shadow: #0b5271;
+}
+
+.current-class{
+    margin-top: -9px;
+    height: 50px;
+    align-items: center;
+    padding: 0 10px;
+  
+}
+
+/* .personal-info{
+    background-color: #0b5271;
+    height: 50px;
+    align-items: center;
+    padding: 0 10px;
+    color: white;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.contact-info{
+    background-color: #0b5271;
+    height: 50px;
+    align-items: center;
+    padding: 0 10px;
+    color: white;
+    margin-top: 10px;
+    text-align: center;
+
+} */

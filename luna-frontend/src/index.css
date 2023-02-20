@@ -1,0 +1,238 @@
+/* body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+} */
+
+/* Path: luna-frontend\src\index.css */
+
+#root {
+  height:100%;
+  width: 100%;
+}
+
+.app {
+  height: 100%;
+  width: 100%;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  margin-top:4%;
+  margin-bottom: 4%;
+}
+
+.DisplayContainer {
+  flex:4;
+}
+
+.DisplayContainer > div {
+  border: solid #09857d 1px;
+  border-radius: 3px;
+  margin: 5% 5%;
+  padding: 4% 0;
+  border-color: #0b5271;
+  border-radius: 3;
+  border: 3px solid #0b5271;
+}
+
+#home-greeting {
+  font-size:300%;
+  font:bolder;
+  font-style:normal;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin: 1.5em 0em;
+}
+
+.current-class{
+  font-size:170%;
+  font:bolder;
+  font-style:normal;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin: 1.5em 0em;
+}
+
+#path {
+  font-size:120%;
+  font:bolder;
+  font-style:normal;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  border: solid #09857d 1px;
+  border-radius: 3px;
+  margin: 5% 5%;
+  padding: 4% 0;
+  border-color: #0b5271;
+  border-radius: 3;
+  border: 3px solid #0b5271;
+}
+
+#path-graphic {
+  width: 350px;
+}
+
+#path-info-container {
+  display: flex;
+
+}
+
+#path-graphic-container > h2 {
+  font-size:170%;
+  font:bolder;
+  font-style:normal;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin: 1.5em 0em; 
+}
+
+#prior-number {
+  color: #aad5e3;
+}
+
+#completed-number {
+  color:#01a8a5;
+}
+
+#remaining-number {
+  color: #0b5271;
+}
+
+.transcript,.registration, .profile-info, .courses, .course-page, .attendance ,.marks, .fee-challan, .withdraw, .assignments, .grade-change, .fee-details, .feedback, .plan  {
+  margin-left: 190px;
+  flex-grow: 1;
+}
+
+.assignment-cards-display {
+  margin-top: 30px;
+}
+
+.sem-selector label {
+  margin: 0 5px;
+}
+
+.sem-selector label > input {
+  margin-right: 3px;
+}
+
+#sem-select {
+  width: 150px;
+  height: 40px;
+  font-size: 14px;
+  text-align: center;
+  background-color: #0b5271;
+  color: lightgrey;
+  border: none;
+  border-radius: 5px;
+}
+
+#sem-select:focus {
+  outline: none;
+}
+
+::-webkit-scrollbar{
+  width:10px;
+}
+
+::-webkit-scrollbar-track{
+  background: #e0e0e0;
+}
+
+::-webkit-scrollbar-thumb{
+  background: #0b5271;
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background: #21a9e3;
+}
+
+.challan-card, .withdraw-card, .grade-card {
+  margin-top: 20px;
+}
+
+.marks-card__header, .withdraw-card__header, .challan-card__header, .grade-card__header {
+  background-color: #0b5271;
+  height: 50px;
+  align-items: center;
+  padding: 0 10px;
+  color: white;
+}
+
+.challan-card__body, .withdraw-card__body, .grade-card__body {
+  background-color: white;
+  padding: 10px;
+}
+
+.challan-card__body table, .accordion-body table, .withdraw-card__body table, .grade-card__body table {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.challan-card__body th, .accordion-body th, .withdraw-card__body th, .grade-card__body th {
+  background-color: rgb(144, 142, 142);
+  color: white;
+  padding: 10px;
+}
+
+.challan-card__body td, .accordion-body td, .withdraw-card__body td, .grade-card__body td {
+  background-color: white;
+  padding: 10px;
+}
+
+.withdraw-card__body table tr td:nth-child(2), .withdraw-card__body table tr th:nth-child(2), .grade-card__body table tr td:nth-child(2), .grade-card__body table tr th:nth-child(2) {
+  text-align: left;
+}
+
+.assignment-card {
+  background-color: #1fc6cc;
+  width: 60%;
+  padding: 5px 10px;
+  margin-top: 10px;
+  border-radius: 10px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 1px 2px 0 rgba(0, 0, 0, 0.19);
+}
+
+.assignment-card:hover {
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 3px 6px 0 rgba(0, 0, 0, 0.19);
+}
+
+.assignment-card #title, #course, #due-date {
+  width: max-content; 
+}
+
+.assignment-card .description {
+  width: 80%;
+}
+
+
+
+.nav-tabs .nav-link {
+  color: white;
+  background-color: #0b5271;
+  text-decoration: none;
+  border-radius: 0px;
+  border: none;
+}
+
+.nav-tabs .nav-link:hover, .nav-tabs .nav-link:focus, .nav-tabs .nav-link.active {
+  color: white;
+  background-color: #0c678e;
+  text-decoration: none;
+  border: none;
+  border-radius: 0px;
+}
+
+.marks-card__body {
+  background-color: white;
+  padding: 10px;
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+}

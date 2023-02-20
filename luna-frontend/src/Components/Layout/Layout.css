@@ -1,0 +1,15 @@
+.layout {
+    width: 100%;
+    height: 100%;
+}
+
+.upper {
+    width: 100%;
+    height: 7.5vh;
+}
+
+.lower {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}

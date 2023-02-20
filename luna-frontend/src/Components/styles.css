@@ -1,0 +1,82 @@
+.challan-card, .withdraw-card, .grade-card {
+    margin-top: 20px;
+}
+
+.marks-card__header, .withdraw-card__header, .challan-card__header, .grade-card__header {
+    background-color: #0b5271;
+    height: 50px;
+    align-items: center;
+    padding: 0 10px;
+    color: white;
+}
+
+.challan-card__body, .withdraw-card__body, .grade-card__body {
+    background-color: white;
+    padding: 10px;
+}
+
+.challan-card__body table, .accordion-body table, .withdraw-card__body table, .grade-card__body table {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.challan-card__body th, .accordion-body th, .withdraw-card__body th, .grade-card__body th {
+    background-color: rgb(144, 142, 142);
+    color: white;
+    padding: 10px;
+}
+
+.challan-card__body td, .accordion-body td, .withdraw-card__body td, .grade-card__body td {
+    background-color: white;
+    padding: 10px;
+}
+
+.withdraw-card__body table tr td:nth-child(2), .withdraw-card__body table tr th:nth-child(2), .grade-card__body table tr td:nth-child(2), .grade-card__body table tr th:nth-child(2) {
+    text-align: left;
+}
+
+.assignment-card {
+    background-color: #1fc6cc;
+    width: 60%;
+    padding: 5px 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 1px 2px 0 rgba(0, 0, 0, 0.19);
+}
+
+.assignment-card:hover {
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2), 0 3px 6px 0 rgba(0, 0, 0, 0.19);
+}
+
+.assignment-card #title, #course, #due-date {
+    width: max-content; 
+}
+
+.assignment-card .description {
+    width: 80%;
+}
+
+.nav-tabs .nav-link {
+    color: white;
+    background-color: #0b5271;
+    text-decoration: none;
+    border-radius: 0px;
+    border: none;
+}
+
+.nav-tabs .nav-link:hover, .nav-tabs .nav-link:focus, .nav-tabs .nav-link.active {
+    color: white;
+    background-color: #0c678e;
+    text-decoration: none;
+    border: none;
+    border-radius: 0px;
+}
+
+.marks-card__body {
+    background-color: white;
+    padding: 10px;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+}
