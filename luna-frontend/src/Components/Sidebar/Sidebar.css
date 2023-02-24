@@ -2,13 +2,19 @@
     padding-top:10px;
 }
 .sidebar {
-    overflow:auto;
+    overflow: hidden;
     position: fixed;
     background-color: #003248;
     width: 15vw;
     height: 100%;
     font-size: 16px;
+    padding: 5px 0;
 }
+
+.sidebar:hover {
+    overflow-y: auto;
+}
+
 .sidebar-link {
     color:white;
     text-decoration: none;

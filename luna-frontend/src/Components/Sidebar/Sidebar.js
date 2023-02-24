@@ -1,6 +1,6 @@
 import "./Sidebar.css";
 import { Link } from "react-router-dom";
-import DashboardIcon from "@mui/icons-material/Dashboard";
+// import DashboardIcon from "@mui/icons-material/Dashboard";
 import AppRegistrationIcon from "@mui/icons-material/AppRegistration";
 import AutoGraphIcon from "@mui/icons-material/AutoGraph";
 import CheckIcon from "@mui/icons-material/Check";
@@ -12,13 +12,12 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import UpgradeIcon from "@mui/icons-material/Upgrade";
 import NextPlanIcon from "@mui/icons-material/NextPlan";
 import AssignmentLateIcon from "@mui/icons-material/AssignmentLate";
-import AssignmentLate from "@mui/icons-material/AssignmentLate";
+// import AssignmentLate from "@mui/icons-material/AssignmentLate";
 import TokenIcon from "@mui/icons-material/Token";
 
 const Sidebar = () => {
   return (
     <div className="sidebar">
-      {/* <div className="container"> */}
       <Link to="/registration" className="sidebar-link">
         <div className="sidebar-item" tabIndex={-1}>
           <div className="sidebar-icon">
@@ -120,8 +119,6 @@ const Sidebar = () => {
           <div className="sidebar-text">Assignments</div>
         </div>
       </Link>
-
-      {/* </div> */}
     </div>
   );
 };
