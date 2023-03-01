@@ -1,14 +1,14 @@
+import "./AssignmentCard.css";
+
 const AssignmentCard = (props) => {
-  const { title } = props;
+  const { title, dueDate } = props;
   return (
     <div className="assignment-card d-flex justify-content-between">
-      <div className="assignment__description">
-        <h3 id="title">{title}</h3>
+      <div className="assignment__title">
+        {title}
         {/* <p id="course">{course}</p> */}
       </div>
-      {/* <div className="assignment__dueDate">
-        <p id="due-date">{dueDate}</p>
-      </div> */}
+      <div className="assignment__dueDate">{dueDate}</div>
     </div>
   );
 };

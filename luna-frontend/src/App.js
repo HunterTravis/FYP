@@ -20,6 +20,7 @@ import Transcript from "./Pages/Transcript";
 import Courses from "./Pages/Courses/Courses";
 import Layout from "./Components/Layout/Layout";
 import CoursePage from "./Pages/CoursePage/CoursePage";
+import AssignmentSubmission from "./Pages/AssignmentSubmission/AssignmentSubmission";
 import { useLocation } from "react-router-dom";
 
 function App() {
@@ -54,6 +55,10 @@ function App() {
               <Route path="/grade-change" element={<GradeChangeRequest />} />
               <Route path="/transcript" element={<Transcript />} />
               <Route path="/coursePage" element={<CoursePage />} />
+              <Route
+                path="/assignmentSubmission"
+                element={<AssignmentSubmission />}
+              />
             </Route>
           </Routes>
         </div>
