@@ -11,8 +11,12 @@ const Layout = () => {
         <Topbar />
       </div>
       <div className="lower">
-        <Sidebar />
-        <Outlet />
+        <div className="sidebar-container">
+          <Sidebar />
+        </div>
+        <div className="main-container">
+          <Outlet />
+        </div>
       </div>
     </div>
   );

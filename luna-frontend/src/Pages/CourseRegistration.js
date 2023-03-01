@@ -1,5 +1,5 @@
 import CourseRegistrationCard from "../Components/CourseRegistrationCard";
-import "./CourseRegistration.css"
+import "./CourseRegistration.css";
 
 const CourseRegistration = () => {
   const offeredCourses = [
@@ -25,17 +25,18 @@ const CourseRegistration = () => {
 
   return (
     <>
-      <div className="registration"></div>
-      <div className="container">
-        <h1>Course Registration</h1>
-        <CourseRegistrationCard data={offeredCourses} />
-        <div id="help-section">
-          <h2>Help</h2>
-          <div>
-            <a href="*">FAQ</a>
-          </div>
-          <div>
-            <a href="*">Contact us</a>
+      <div className="registration">
+        <div className="container">
+          <h1>Course Registration</h1>
+          <CourseRegistrationCard data={offeredCourses} />
+          <div id="help-section">
+            <h2>Help</h2>
+            <div>
+              <a href="*">FAQ</a>
+            </div>
+            <div>
+              <a href="*">Contact us</a>
+            </div>
           </div>
         </div>
       </div>
