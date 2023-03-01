@@ -1,5 +1,9 @@
-const CourseRegistrationCard = ({ data }) => {
+const CourseRegistrationCard = ({ data, handleRegisterCourse }) => {
   const courses = data;
+
+  const registerCourse = (ccode, cname) => {
+    handleRegisterCourse(ccode, cname);
+  };
 
   return (
     <div className="withdraw-card">
@@ -23,7 +27,12 @@ const CourseRegistrationCard = ({ data }) => {
                 <td>{course.type}</td>
                 <td>{course.chours}</td>
                 <td>
-                  <button className="btn btn-primary">Register</button>
+                  <button
+                    className="btn btn-primary"
+                    onClick={() => registerCourse(course.code, course.cname)}
+                  >
+                    Register
+                  </button>
                 </td>
               </tr>
             );

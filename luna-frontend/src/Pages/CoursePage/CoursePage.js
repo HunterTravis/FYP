@@ -1,6 +1,8 @@
 import React from "react";
 import "./CoursePage.css";
 import { useLocation } from "react-router-dom";
+import AssignmentCard from "../../Components/AssignmentCard";
+
 const CoursePage = () => {
   const location = useLocation();
   const { courseHead } = location.state;
@@ -155,8 +157,9 @@ const CoursePage = () => {
               {assignments.map((assignment) => (
                 <li>
                   <div>
-                    <h5>{assignment.title}</h5>
-                    <p>{assignment.description}</p>
+                    <AssignmentCard title={assignment.title} />
+                    {/* <h5>{}</h5>
+                    <p>{assignment.description}</p> */}
                   </div>
                 </li>
               ))}
