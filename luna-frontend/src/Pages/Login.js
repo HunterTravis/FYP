@@ -8,10 +8,21 @@ const Login = () => {
     const navigate = useNavigate();
 
     const handleSubmit = (e) => {
-        e.preventDefault();
-        if (username === "student" && password === "student") {
-            navigate("/dashboard");
-        }
+        console.log(username, password);
+        fetch('http://localhost:3001/auth/login', {
+            method: 'POST',
+            headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ username, password })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if(data.message==="Login Successful"){
+                navigate("/dashboard");
+            }
+    })
+    // .catch(error => console.error(error));
     }
     
     return (
