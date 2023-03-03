@@ -1,10 +1,12 @@
 import './Login.css';
 import {useState} from 'react';
 import {useNavigate} from 'react-router-dom';
+import { useCookies } from 'react-cookie';
 
 const Login = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const [cookies, setCookie] = useCookies(['user']);
     const navigate = useNavigate();
 
     const handleSubmit = (e) => {
@@ -19,6 +21,9 @@ const Login = () => {
         .then(response => response.json())
         .then(data => {
             if(data.status===200){
+                //set cookie
+                setCookie('Name', username, { path: '/' });
+                setCookie('LoggedIn', "true", { path: '/' });
                 navigate(data.navigation);
             }
             else
