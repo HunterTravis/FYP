@@ -8,7 +8,7 @@ const Login = () => {
     const navigate = useNavigate();
 
     const handleSubmit = (e) => {
-        console.log(username, password);
+        e.preventDefault();
         fetch('http://localhost:3001/auth/login', {
             method: 'POST',
             headers: {
@@ -18,11 +18,15 @@ const Login = () => {
         })
         .then(response => response.json())
         .then(data => {
-            if(data.message==="Login Successful"){
-                navigate("/dashboard");
+            if(data.status===200){
+                navigate(data.navigation);
             }
-    })
-    // .catch(error => console.error(error));
+            else
+            {
+                alert(data.message);
+            }
+        })
+        .catch(error => {alert("Something went wrong"); console.log(error)});
     }
     
     return (

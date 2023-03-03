@@ -1,32 +1,45 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const router = express.Router();
-const connection = require('./../connection.js');
+const connection = require('../requires/connection.js');
 
 router.use(bodyParser.json());
 
 router.post('/login', (req, res) => {
-    const query = "SELECT * FROM User where username="+req.body.username+"";
-    connection.query(query, (error, results, fields) => {
-    if (error) throw error;
-    if(req.body.username==results[0].username && req.body.password==results[0].password){
-        console.log("hogyaaa");
-        res.send({
-            message: 'Login Successful',
-            user: results[0]
-        });
-    }
-  });
-  });
-router.get('/login', (req, res) => {
-    const query = "SELECT * FROM User";
-    connection.query(query, (error, results, fields) => {
-        res.json(results);
-}
-    )});
-  
-  router.post('/signup', (req, res) => {
-    // handle user signup
-  });
+  const username = req.body.username;
+  const password = req.body.password;
+  connection.query("SELECT * FROM User WHERE username = ? AND password = ?", [username, password],
+    (err, result) => {
+      if (err) {
+        res.send({ err: err });
+          }
 
-  module.exports = router;
+      if (result.length > 0 && result[0].username === username && result[0].password === password) {
+        res.send({
+          status: 200,
+          navigation: "/dashboard",
+        });
+      } else {
+        res.send({
+          status: 404,
+          message: "Invalid Credentials"
+        });
+      }
+    }
+  );
+});
+router.get('/login', (req, res) => {
+
+  console.log("GET Api recieved!")
+  const query = "SELECT * FROM User";
+  connection.query(query, (error, results, fields) => {
+    res.json(results);
+  }
+  )
+});
+
+router.post('/signup', (req, res) => {
+  // handle user signup
+});
+
+module.exports = router;
