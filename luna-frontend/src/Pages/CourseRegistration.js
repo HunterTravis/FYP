@@ -1,54 +1,45 @@
 import CourseRegistrationCard from "../Components/CourseRegistrationCard";
 import "./CourseRegistration.css";
-import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { useCookies } from "react-cookie";
 
-
 const CourseRegistration = () => {
-  var counter=0;
-  const navigate = useNavigate();
+  var counter = 0;
   const [cookies, setCookie] = useCookies(['user']);
+  var offeredCourses = [];
   useEffect(() => {
-      if(counter===0){counter+=1;}
-      else{
-
-          if(cookies.Name === undefined || cookies.LoggedIn !== "true") {
-              alert("You are not logged in");
-              navigate('/');
+    if (counter === 0) { counter += 1; }
+    else {
+      fetch('http://localhost:3001/CourseRegistration', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ username: cookies.username })
+      })
+        .then(response => response.json())
+        .then(data => {
+          if (data.result) {
+            for (var i = 0; i < data.result.length; i++) {
+              offeredCourses.push(data.result[i]);
+            }
+          } else {
+            console.log('Result is undefined');
           }
-      }
-  }, [])
 
-
-
-  const offeredCourses = [
-    {
-      code: "CS302",
-      cname: "Information Security",
-      chours: "3",
-      type: "Core",
-    },
-    {
-      code: "CS402",
-      cname: "Professional Practices in IT",
-      chours: "3",
-      type: "Core",
-    },
-    {
-      code: "CS502",
-      cname: "Design Defects and Restructuring",
-      chours: "3",
-      type: "Elective",
-    },
-  ];
+        }
+        )
+        .catch(error => { alert("Something went wrong"); console.log(error) });
+    }
+  }
+    , []);
 
   return (
     <>
       <div className="registration">
         <div className="container">
           <h1>Course Registration</h1>
-          <CourseRegistrationCard data={offeredCourses} />
+          <CourseRegistrationCard courses={offeredCourses} />
           <div id="help-section">
             <h2>Help</h2>
             <div>

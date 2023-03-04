@@ -16,13 +16,13 @@ const Login = () => {
             headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ username, password })
+        body: JSON.stringify({username,password})
         })
         .then(response => response.json())
         .then(data => {
             if(data.status===200){
                 //set cookie
-                setCookie('Name', username, { path: '/' });
+                setCookie('username', username, { path: '/' });
                 setCookie('LoggedIn', "true", { path: '/' });
                 navigate(data.navigation);
             }

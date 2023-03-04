@@ -1,14 +1,14 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-
+import {useCookies} from 'react-cookie';
 function ProtectedRoute(props) {
+  const [cookies, setCookie] = useCookies(['user']);
   const { Component } = props;
   const navigate = useNavigate();
 
   useEffect(() => {
-    const login = sessionStorage.getItem("login");
-    if (!login) {
-      navigate("/login");
+    if (cookies.LoggedIn!="true") {
+      navigate("/");
     }
   });
   return (

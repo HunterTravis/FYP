@@ -1,6 +1,4 @@
-const CourseRegistrationCard = ({ data }) => {
-  const courses = data;
-
+const CourseRegistrationCard = ({ courses }) => {
   return (
     <div className="withdraw-card">
       <div className="withdraw-card__header d-flex">
@@ -18,10 +16,11 @@ const CourseRegistrationCard = ({ data }) => {
           {courses.map((course) => {
             return (
               <tr>
-                <td>{course.code}</td>
-                <td>{course.cname}</td>
-                <td>{course.type}</td>
-                <td>{course.chours}</td>
+                {console.log(course)}
+                <td>{course.course_code}</td>
+                <td>{course.course_name}</td>
+                <td>{course.course_type}</td>
+                <td>{course.credit_hours}</td>
                 <td>
                   <button className="btn btn-primary">Register</button>
                 </td>
