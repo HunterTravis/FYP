@@ -1,12 +1,12 @@
 import CourseRegistrationCard from "../Components/CourseRegistrationCard";
 import "./CourseRegistration.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useCookies } from "react-cookie";
 
 const CourseRegistration = () => {
   var counter = 0;
   const [cookies, setCookie] = useCookies(['user']);
-  var offeredCourses = [];
+  const [offeredCourses, setOfferedCourses] = useState([]);
   useEffect(() => {
     if (counter === 0) { counter += 1; }
     else {
@@ -20,10 +20,9 @@ const CourseRegistration = () => {
         .then(response => response.json())
         .then(data => {
           if (data.result) {
-            for (var i = 0; i < data.result.length; i++) {
-              offeredCourses.push(data.result[i]);
+              setOfferedCourses(data.result);
             }
-          } else {
+          else {
             console.log('Result is undefined');
           }
 
