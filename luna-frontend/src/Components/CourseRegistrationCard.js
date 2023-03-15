@@ -1,11 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useCookies } from "react-cookie";
 
 const CourseRegistrationCard = ({ courses, registerHandler }) => {
   const [cookie, setCookie] = useCookies(["user"]);
-  const [section, setSection] = useState("A");
+  const [section, setSection] = useState(Array(courses.length).fill("A"));
+
+  // useEffect(() => {
+  //   const initSection = Array(courses.length);
+  //   initSection.fill("A");
+  //   setSection(initSection);
+  // }, []);
 
   const handleRegisterClick = (courseCode, section) => {
+    console.log(courseCode, section);
     registerHandler(cookie.username, courseCode, section);
   };
 
@@ -24,7 +31,7 @@ const CourseRegistrationCard = ({ courses, registerHandler }) => {
             <th>Section</th>
             <th></th>
           </tr>
-          {courses.map((course) => {
+          {courses.map((course, i) => {
             return (
               <tr>
                 {console.log(course)}
@@ -34,11 +41,12 @@ const CourseRegistrationCard = ({ courses, registerHandler }) => {
                 <td>{course.credit_hours}</td>
                 <td>
                   <select
-                    // value={section}
-                    // onChange={(e) => {
-                    //   setSection(e.target.value);
-                    // }}
-                    id="sectionSelect"
+                    value={section[i]}
+                    onChange={(e) => {
+                      const temp = [...section];
+                      temp[i] = e.target.value;
+                      setSection(temp);
+                    }}
                   >
                     <option value="A">A</option>
                     <option value="B">B</option>
@@ -48,12 +56,9 @@ const CourseRegistrationCard = ({ courses, registerHandler }) => {
                 <td>
                   <button
                     className="btn btn-primary"
-                    onClick={() =>
-                      handleRegisterClick(
-                        course.course_code,
-                        document.getElementById("sectionSelect").value
-                      )
-                    }
+                    onClick={() => {
+                      handleRegisterClick(course.course_code, section[i]);
+                    }}
                   >
                     Register
                   </button>
