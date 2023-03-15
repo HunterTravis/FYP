@@ -6,7 +6,7 @@ const ProfileInformation = () => {
   return (
     <div className="profile-info">
       <div className="container">
-        <h1>Welcome back | Student Profile</h1>
+        <h1>Student Profile</h1>
         <ProfileCard student={mockStudentData} />
       </div>
     </div>

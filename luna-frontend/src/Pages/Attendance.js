@@ -1,5 +1,6 @@
-
 import AttendanceCard from "../Components/AttendanceCard";
+import "./Attendance.css";
+import { useState } from "react";
 
 const plan = [
   {
@@ -26,61 +27,27 @@ const plan = [
       },
     ],
   },
-  {
-    semesterNo: 2,
-    semesterName: "Spring 2022",
-    courses: [
-      {
-        code: "CS303",
-        cname: "Software Engineering",
-        chours: "3",
-        type: "Core",
-      },
-      {
-        code: "CS403",
-        cname: "Software Testing",
-        chours: "3",
-        type: "Core",
-      },
-      {
-        code: "CS503",
-        cname: "Software Architecture",
-        chours: "3",
-        type: "Elective",
-      },
-    ],
-  },
-  {
-    semesterNo: 3,
-    semesterName: "Fall 2022",
-    courses: [
-      {
-        code: "CS304",
-        cname: "Software Project Management",
-        chours: "3",
-        type: "Core",
-      },
-      {
-        code: "CS404",
-        cname: "Software Quality Assurance",
-        chours: "3",
-        type: "Core",
-      },
-      {
-        code: "CS504",
-        cname: "Software Reuse",
-        chours: "3",
-        type: "Elective",
-      },
-    ],
-  },
 ];
 
 const Attendance = () => {
+  const [semester, setSemester] = useState("");
+
   return (
     <div className="attendance">
       <div className="container">
         <h1>Attendance</h1>
+        <div className="sem-selector">
+          <select
+            value={semester}
+            name="semester"
+            id="semester"
+            onChange={(e) => setSemester(e.target.value)}
+          >
+            <option value="1">Spring 2022</option>
+            <option value="2">Fall 2022</option>
+            <option value="3">Spring 2023</option>
+          </select>
+        </div>
         <AttendanceCard data={plan} />
       </div>
     </div>

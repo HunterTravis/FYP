@@ -1,13 +1,11 @@
 import MarksCard from "../Components/MarksCard";
 import { useState } from "react";
 
-
 const Marks = () => {
-
   const [arr, setArr] = useState([1, 0, 0]);
   const onClick = (e) => {
-    setArr(e === 1? 0 : (e === 2 ? 1 : 2));
-  }
+    setArr(e === 1 ? 0 : e === 2 ? 1 : 2);
+  };
 
   return (
     <div className="marks">
@@ -15,7 +13,13 @@ const Marks = () => {
         <h1>Marks</h1>
         <div className="sem-selector text-center">
           <label htmlFor="fall-22">
-            <input type="radio" id="fall-22" name="sem" value="fall22" defaultChecked />
+            <input
+              type="radio"
+              id="fall-22"
+              name="sem"
+              value="fall22"
+              defaultChecked
+            />
             Fall 2022
           </label>
           <label htmlFor="summer-22">

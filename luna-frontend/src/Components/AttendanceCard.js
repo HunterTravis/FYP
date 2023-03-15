@@ -1,4 +1,4 @@
-// import Transcript from "../Pages/Transcript";
+import React from "react";
 
 const AttendanceCard = ({ data }) => {
   const plan = data;
@@ -31,7 +31,9 @@ const AttendanceCard = ({ data }) => {
                       <td>{course.type}</td>
                       <td>{course.chours}</td>
                       <td>
-                        <button className="btn btn-primary">Request for Modification</button>
+                        <button className="btn btn-primary">
+                          Request for Modification
+                        </button>
                       </td>
                     </tr>
                   );
@@ -46,8 +48,3 @@ const AttendanceCard = ({ data }) => {
 };
 
 export default AttendanceCard;
-
-
-
-
-

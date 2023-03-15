@@ -1,7 +1,7 @@
 import React from "react";
 import "./CoursePage.css";
 import { useLocation, Link } from "react-router-dom";
-import AssignmentCard from "../../Components/AssignmentCard";
+import AssignmentCard from "../../Components/AssignmentCard/AssignmentCard";
 
 const CoursePage = () => {
   const location = useLocation();

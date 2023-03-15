@@ -1,3 +1,4 @@
+import React from "react";
 import "./AssignmentCard.css";
 
 const AssignmentCard = (props) => {
