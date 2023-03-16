@@ -10,8 +10,10 @@ app.use(cors({origin: "*"}));
 
 const CourseRegistrationData = require('./routes/CourseRegistration');
 const authRoutes = require('./routes/auth');
+const Attendance = require('./routes/Attendance');
 app.use('/auth', authRoutes);
 app.use('/CourseRegistration', CourseRegistrationData);
+app.use('/Attendance', Attendance);
 
 
 //making the server listen to port
