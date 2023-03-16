@@ -6,14 +6,16 @@ const app = express();
 
 //handled CORS error
 const cors = require('cors');
-app.use(cors({origin: "*"}));
+app.use(cors({ origin: "*" }));
 
 const CourseRegistrationData = require('./routes/CourseRegistration');
 const authRoutes = require('./routes/auth');
 const Attendance = require('./routes/Attendance');
+const Courses = require('./routes/Courses');
 app.use('/auth', authRoutes);
 app.use('/CourseRegistration', CourseRegistrationData);
 app.use('/Attendance', Attendance);
+app.use('/Courses', Courses);
 
 
 //making the server listen to port

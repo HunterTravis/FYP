@@ -63,7 +63,10 @@ router.post("/", (req, res) => {
             }
 
             const finalOutput = Object.values(output)
-            console.log(finalOutput[0]);
+            finalOutput.forEach((semester) => {
+                semester.courses = Object.values(semester.courses).map(obj => ({...obj}));});
+                
+            console.log(finalOutput[1]);
             res.send({
                 result: finalOutput,
             });
