@@ -33,6 +33,7 @@ const CourseRegistration = () => {
       .catch((error) => {
         console.log("Something went wrong:", error);
       });
+
   };
 
   useEffect(() => {
