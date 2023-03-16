@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import CourseCard from '../../Components/CourseCard/CourseCard';
 import './Courses.css';
+import { useCookies } from "react-cookie";
 import { Link } from 'react-router-dom';
 const dummyData = [
   {
@@ -126,6 +127,27 @@ const dummyData = [
 ];
 
 function Courses(props) {
+  const [cookies, setCookie] = useCookies(["user"]);
+  useEffect(() => {
+    console.log("asd");
+    fetch("http://localhost:3001/Courses", {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        username: {username: cookies.username}
+      })
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log(data); // logs the dummyData list of objects
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+  }, []);
+
   const data = dummyData;
   return (
     <div className="courses">
