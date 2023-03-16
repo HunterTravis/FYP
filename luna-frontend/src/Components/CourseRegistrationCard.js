@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useCookies } from "react-cookie";
 
-const CourseRegistrationCard = ({ courses, registerHandler }) => {
+const CourseRegistrationCard = ({ courses, registerHandler, deleteHandler }) => {
   const [cookie, setCookie] = useCookies(["user"]);
   const [section, setSection] = useState(Array(courses.length));
 
@@ -14,7 +14,7 @@ const CourseRegistrationCard = ({ courses, registerHandler }) => {
     console.log(courseCode);
     deleteHandler(courseCode);
   };
-  
+
   const handleRegisterClick = (courseCode, section) => {
     console.log(courseCode, section);
     registerHandler(cookie.username, courseCode, section);
