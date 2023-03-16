@@ -41,7 +41,6 @@ const CourseRegistrationCard = ({ courses, registerHandler }) => {
                   <select
                     value={section[i]}
                     onChange={(e) => {
-                      
                       const temp = [...section];
                       temp[i] = e.target.value;
                       setSection(temp);
@@ -53,14 +52,20 @@ const CourseRegistrationCard = ({ courses, registerHandler }) => {
                   </select>
                 </td>
                 <td>
-                  <button
-                    className="btn btn-primary"
-                    onClick={() => {
-                      handleRegisterClick(course.course_code, section[i]);
-                    }}
-                  >
-                    Register
-                  </button>
+                  {course.status === "Registered" ? (
+                    <button className="btn btn-primary" disabled>
+                      Registered
+                    </button>
+                  ) : (
+                    <button
+                      className="btn btn-primary"
+                      onClick={() => {
+                        handleRegisterClick(course.course_code, section[i]);
+                      }}
+                    >
+                      Register
+                    </button>
+                  )}
                 </td>
               </tr>
             );
