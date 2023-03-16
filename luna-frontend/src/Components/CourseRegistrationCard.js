@@ -10,6 +10,11 @@ const CourseRegistrationCard = ({ courses, registerHandler }) => {
   //   console.log(section)
   // },[]);
 
+  const handleDeleteClick = (courseCode) => {
+    console.log(courseCode);
+    deleteHandler(courseCode);
+  };
+  
   const handleRegisterClick = (courseCode, section) => {
     console.log(courseCode, section);
     registerHandler(cookie.username, courseCode, section);
