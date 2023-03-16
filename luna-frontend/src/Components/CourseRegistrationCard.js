@@ -3,13 +3,12 @@ import { useCookies } from "react-cookie";
 
 const CourseRegistrationCard = ({ courses, registerHandler }) => {
   const [cookie, setCookie] = useCookies(["user"]);
-  const [section, setSection] = useState(Array(courses.length).fill("A"));
+  const [section, setSection] = useState(Array(courses.length));
 
   // useEffect(() => {
-  //   const initSection = Array(courses.length);
-  //   initSection.fill("A");
-  //   setSection(initSection);
-  // }, []);
+  //   setSection(Array(courses.length).fill("A"));
+  //   console.log(section)
+  // },[]);
 
   const handleRegisterClick = (courseCode, section) => {
     console.log(courseCode, section);
@@ -34,7 +33,6 @@ const CourseRegistrationCard = ({ courses, registerHandler }) => {
           {courses.map((course, i) => {
             return (
               <tr>
-                {console.log(course)}
                 <td>{course.course_code}</td>
                 <td>{course.course_name}</td>
                 <td>{course.course_type}</td>
@@ -43,6 +41,7 @@ const CourseRegistrationCard = ({ courses, registerHandler }) => {
                   <select
                     value={section[i]}
                     onChange={(e) => {
+                      
                       const temp = [...section];
                       temp[i] = e.target.value;
                       setSection(temp);

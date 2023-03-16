@@ -9,7 +9,30 @@ const CourseRegistration = () => {
   const [offeredCourses, setOfferedCourses] = useState([]);
 
   const handleRegister = (studentId, courseCode, section) => {
-    console.log(studentId, courseCode, section);
+    fetch("http://localhost:3001/CourseRegistration/register", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        username: studentId, // student id
+        courseCode: courseCode, // course code
+        section: section, // course section
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.registrationResult === "Success") {
+          console.log("Course Registered");
+        } else if (data.registrationResult === "Already Registered") {
+          console.log("Course Already Registered");
+        } else {
+          console.log("Course Registration Failed");
+        }
+      })
+      .catch((error) => {
+        console.log("Something went wrong:", error);
+      });
   };
 
   useEffect(() => {
