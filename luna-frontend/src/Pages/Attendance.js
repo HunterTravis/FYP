@@ -3,7 +3,6 @@ import AttendanceCard from "../Components/AttendanceCard";
 import { useState } from "react";
 import { useCookies } from "react-cookie";
 
-
 const plan = [
   {
     semesterNo: 1,
@@ -80,7 +79,7 @@ const plan = [
 ];
 
 const Attendance = () => {
-  const [cookies, setCookie] = useCookies(['user']);
+  const [cookies, setCookie] = useCookies(["user"]);
   const [attendance, setAttendance] = useState([]);
   useEffect(() => {
     fetch("http://localhost:3001/Attendance", {
@@ -88,20 +87,20 @@ const Attendance = () => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ username: cookies.username })
+      body: JSON.stringify({ username: cookies.username }),
     })
       .then((res) => res.json())
       .then((data) => {
         console.log(data.result[0]);
-      }
-      );
-  }, [])
+        setAttendance(data.result);
+      });
+  }, []);
 
   return (
     <div className="attendance">
       <div className="container">
         <h1>Attendance</h1>
-        <AttendanceCard data={plan} />
+        <AttendanceCard data={attendance} />
       </div>
     </div>
   );
