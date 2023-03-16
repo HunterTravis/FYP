@@ -11,7 +11,7 @@ const CourseRegistration = () => {
   const handleDelete = (studentId, courseCode) => {
     const data = { username: studentId, courseCode: courseCode };
 
-    fetch("/api/delete-course-registration", {
+    fetch("http://localhost:3001/CourseRegistration/delete", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
