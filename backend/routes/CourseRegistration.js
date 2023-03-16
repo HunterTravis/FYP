@@ -120,5 +120,35 @@ router.post("/register", (req, res) => {
 });
 
 
+router.post("/delete", (req, res) => {
+  const { username, courseCode } = req.body;
+
+  // Check if the record exists
+  const checkQuery = `SELECT * FROM StudentCourseRecords 
+                      WHERE StudentID = '${username}' 
+                      AND CourseCode = '${courseCode}'`;
+
+  connection.query(checkQuery, (err, results) => {
+    if (err) {
+      res.send({ err: err });
+    } else if (results.length === 0) {
+      res.send({ message: "Record not found." });
+    } else {
+      // Delete the record
+      const deleteQuery = `DELETE FROM StudentCourseRecords 
+                           WHERE StudentID = '${username}' 
+                           AND CourseCode = '${courseCode}'`;
+
+      connection.query(deleteQuery, (err, result) => {
+        if (err) {
+          res.send({ err: err });
+        } else {
+          res.send({ message: "Record deleted successfully." });
+        }
+      });
+    }
+  });
+});
+
 
 module.exports = router;
