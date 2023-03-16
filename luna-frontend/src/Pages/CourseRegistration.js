@@ -8,28 +8,24 @@ const CourseRegistration = () => {
   const [cookies, setCookie] = useCookies(["user"]);
   const [offeredCourses, setOfferedCourses] = useState([]);
 
+  const handleDelete = (studentId, courseCode) => {
+    const data = { username: studentId, courseCode: courseCode };
 
-  const handleDelete = (courseCode) => {
-
-    const data = { username: cookies.username, courseCode: courseCode };
-
-    fetch('/api/delete-course-registration', {
-      method: 'POST',
+    fetch("/api/delete-course-registration", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(data),
     })
-      .then(response => response.json())
-      .then(data => {
+      .then((response) => response.json())
+      .then((data) => {
         console.log(data);
       })
-      .catch(error => {
-        console.error('Error:', error);
+      .catch((error) => {
+        console.error("Error:", error);
       });
-
-  }
-
+  };
 
   const handleRegister = (studentId, courseCode, section) => {
     fetch("http://localhost:3001/CourseRegistration/register", {

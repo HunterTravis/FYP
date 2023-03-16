@@ -1,18 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { useCookies } from "react-cookie";
 
-const CourseRegistrationCard = ({ courses, registerHandler, deleteHandler }) => {
+const CourseRegistrationCard = ({
+  courses,
+  registerHandler,
+  deleteHandler,
+}) => {
   const [cookie, setCookie] = useCookies(["user"]);
   const [section, setSection] = useState(Array(courses.length));
 
-  // useEffect(() => {
-  //   setSection(Array(courses.length).fill("A"));
-  //   console.log(section)
-  // },[]);
-
   const handleDeleteClick = (courseCode) => {
     console.log(courseCode);
-    deleteHandler(courseCode);
+    deleteHandler(cookie.username, courseCode);
   };
 
   const handleRegisterClick = (courseCode, section) => {
@@ -33,6 +32,7 @@ const CourseRegistrationCard = ({ courses, registerHandler, deleteHandler }) => 
             <th>Type</th>
             <th>Credit Hrs.</th>
             <th>Section</th>
+            <th></th>
             <th></th>
           </tr>
           {courses.map((course, i) => {
@@ -69,6 +69,22 @@ const CourseRegistrationCard = ({ courses, registerHandler, deleteHandler }) => 
                       }}
                     >
                       Register
+                    </button>
+                  )}
+                </td>
+                <td>
+                  {course.status === "Registered" ? (
+                    <button
+                      className="btn btn-danger"
+                      onClick={() => {
+                        handleDeleteClick(course.course_code);
+                      }}
+                    >
+                      Drop
+                    </button>
+                  ) : (
+                    <button className="btn btn-danger" disabled>
+                      Drop
                     </button>
                   )}
                 </td>
