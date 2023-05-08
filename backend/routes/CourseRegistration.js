@@ -141,6 +141,7 @@ router.post("/delete", (req, res) => {
         if (err) {
           res.send({ err: err });
         } else {
+          console.log("Course Dropped");
           res.send({ message: "Record deleted successfully." });
         }
       });
