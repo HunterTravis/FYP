@@ -1,5 +1,7 @@
-
+import React, { useEffect } from "react";
 import AttendanceCard from "../Components/AttendanceCard";
+import { useState } from "react";
+import { useCookies } from "react-cookie";
 
 const plan = [
   {
@@ -77,11 +79,28 @@ const plan = [
 ];
 
 const Attendance = () => {
+  const [cookies, setCookie] = useCookies(["user"]);
+  const [attendance, setAttendance] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:3001/Attendance", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ username: cookies.username }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data.result[0]);
+        setAttendance(data.result);
+      });
+  }, []);
+
   return (
     <div className="attendance">
       <div className="container">
         <h1>Attendance</h1>
-        <AttendanceCard data={plan} />
+        <AttendanceCard data={attendance} />
       </div>
     </div>
   );

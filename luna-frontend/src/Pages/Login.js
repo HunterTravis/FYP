@@ -1,17 +1,37 @@
 import './Login.css';
 import {useState} from 'react';
 import {useNavigate} from 'react-router-dom';
+import { useCookies } from 'react-cookie';
 
 const Login = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const [cookies, setCookie] = useCookies(['user']);
     const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (username === "student" && password === "student") {
-            navigate("/dashboard");
-        }
+        fetch('http://localhost:3001/auth/login', {
+            method: 'POST',
+            headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({username,password})
+        })
+        .then(response => response.json())
+        .then(data => {
+            if(data.status===200){
+                //set cookie
+                setCookie('username', username, { path: '/' });
+                setCookie('LoggedIn', "true", { path: '/' });
+                navigate(data.navigation);
+            }
+            else
+            {
+                alert(data.message);
+            }
+        })
+        .catch(error => {alert("Something went wrong"); console.log(error)});
     }
     
     return (
