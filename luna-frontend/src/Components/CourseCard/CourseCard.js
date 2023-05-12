@@ -2,7 +2,8 @@ import React from "react";
 import "./CourseCard.css";
 
 function CourseCard(props) {
-  const { courseCode, courseName } = props;
+  const { courseCode, assignments, courseName } = props;
+  console.log(props);
   // courseId,
   return (
     <div className="course-card">

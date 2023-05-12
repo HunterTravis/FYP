@@ -19,10 +19,6 @@ const CourseRegistrationCard = ({
     registerHandler(cookie.username, courseCode, section);
   };
 
-  const registerCourse = (ccode, cname) => {
-    handleRegisterCourse(ccode, cname);
-  };
-
   return (
     <div className="withdraw-card">
       <div className="withdraw-card__header d-flex">

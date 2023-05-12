@@ -36,13 +36,6 @@ const Marks = () => {
               value="fall22"
               defaultChecked
             />
-            <input
-              type="radio"
-              id="fall-22"
-              name="sem"
-              value="fall22"
-              defaultChecked
-            />
             Fall 2022
           </label>
           <label htmlFor="summer-22">
