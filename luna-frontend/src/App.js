@@ -18,6 +18,7 @@ import Transcript from "./Pages/Transcript";
 import Courses from "./Pages/Courses/Courses";
 import Layout from "./Components/Layout/Layout";
 import CoursePage from "./Pages/CoursePage/CoursePage";
+import AssignmentSubmission from "./Pages/AssignmentSubmission/AssignmentSubmission";
 import ProtectedRoute from "./Components/ProtectedRoute";
 
 function App() {
@@ -93,6 +94,10 @@ function App() {
               <Route
                 path="/coursePage"
                 element={<ProtectedRoute Component={CoursePage} />}
+              />
+              <Route
+                path="/assignmentSubmission"
+                element={<ProtectedRoute Component={AssignmentSubmission} />}
               />
             </Route>
           </Routes>

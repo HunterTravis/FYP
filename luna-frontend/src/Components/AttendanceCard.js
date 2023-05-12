@@ -1,4 +1,4 @@
-// import Transcript from "../Pages/Transcript";
+import React from "react";
 
 const AttendanceCard = ({ data }) => {
   const attendance = data;

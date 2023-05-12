@@ -1,4 +1,4 @@
-import AssignmentCard from "../../Components/AssignmentCard";
+import AssignmentCard from "../../Components/AssignmentCard/AssignmentCard";
 import "./Assignments.css";
 
 const assignmentData = [
