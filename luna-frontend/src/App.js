@@ -19,6 +19,7 @@ import Courses from "./Pages/Courses/Courses";
 import Layout from "./Components/Layout/Layout";
 import CoursePage from "./Pages/CoursePage/CoursePage";
 import AssignmentSubmission from "./Pages/AssignmentSubmission/AssignmentSubmission";
+import TeacherHome from "./Teacher/Home";
 import ProtectedRoute from "./Components/ProtectedRoute";
 
 function App() {
@@ -98,6 +99,10 @@ function App() {
               <Route
                 path="/assignmentSubmission"
                 element={<ProtectedRoute Component={AssignmentSubmission} />}
+              />
+              <Route
+                path="/teacher-home"
+                element={<ProtectedRoute Component={TeacherHome} />}
               />
             </Route>
           </Routes>
