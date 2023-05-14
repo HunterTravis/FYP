@@ -1,6 +1,8 @@
+import React, { useEffect } from "react";
+import { useState } from "react";
+import { useCookies } from "react-cookie";
 import AttendanceCard from "../Components/AttendanceCard";
 import "./Attendance.css";
-import { useState } from "react";
 
 const plan = [
   {
@@ -30,25 +32,28 @@ const plan = [
 ];
 
 const Attendance = () => {
-  const [semester, setSemester] = useState("");
+  const [cookies, setCookie] = useCookies(["user"]);
+  const [attendance, setAttendance] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:3001/Attendance", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ username: cookies.username }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data.result[0]);
+        setAttendance(data.result);
+      });
+  }, []);
 
   return (
     <div className="attendance">
       <div className="container">
         <h1>Attendance</h1>
-        <div className="sem-selector">
-          <select
-            value={semester}
-            name="semester"
-            id="semester"
-            onChange={(e) => setSemester(e.target.value)}
-          >
-            <option value="1">Spring 2022</option>
-            <option value="2">Fall 2022</option>
-            <option value="3">Spring 2023</option>
-          </select>
-        </div>
-        <AttendanceCard data={plan} />
+        <AttendanceCard data={attendance} />
       </div>
     </div>
   );
