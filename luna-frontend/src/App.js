@@ -20,6 +20,10 @@ import Layout from "./Components/Layout/Layout";
 import CoursePage from "./Pages/CoursePage/CoursePage";
 import AssignmentSubmission from "./Pages/AssignmentSubmission/AssignmentSubmission";
 import TeacherHome from "./Teacher/Home";
+import TeacherAttendance from "./Teacher/Attendance";
+import TeacherCourses from "./Teacher/Courses";
+import TeacherMarks from "./Teacher/Marks";
+import TeacherGradeChangeRequest from "./Teacher/GradeChangeRequest";
 import ProtectedRoute from "./Components/ProtectedRoute";
 
 function App() {
@@ -103,6 +107,24 @@ function App() {
               <Route
                 path="/teacher-home"
                 element={<ProtectedRoute Component={TeacherHome} />}
+              />
+              <Route
+                path="/teacher-attendance"
+                element={<ProtectedRoute Component={TeacherAttendance} />}
+              />
+              <Route
+                path="/teacher-courses"
+                element={<ProtectedRoute Component={TeacherCourses} />}
+              />
+              <Route
+                path="/teacher-marks"
+                element={<ProtectedRoute Component={TeacherMarks} />}
+              />
+              <Route
+                path="/teacher-grade-change"
+                element={
+                  <ProtectedRoute Component={TeacherGradeChangeRequest} />
+                }
               />
             </Route>
           </Routes>
