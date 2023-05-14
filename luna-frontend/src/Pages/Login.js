@@ -24,6 +24,7 @@ const Login = () => {
           //set cookie
           setCookie("username", username, { path: "/" });
           setCookie("LoggedIn", "true", { path: "/" });
+          setCookie("role", data.role, { path: "/" });
           console.log(data.navigation);
           navigate(data.navigation);
         } else {

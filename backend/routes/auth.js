@@ -25,6 +25,7 @@ router.post("/login", (req, res) => {
           res.send({
             status: 200,
             navigation: "/dashboard",
+            role: result[0].role,
           });
         } else if (
           result[0].username === username &&
@@ -34,6 +35,7 @@ router.post("/login", (req, res) => {
           res.send({
             status: 200,
             navigation: "/teacher-home",
+            role: result[0].role,
           });
         } else {
           res.send({
