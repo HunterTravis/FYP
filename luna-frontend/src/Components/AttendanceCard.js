@@ -1,17 +1,15 @@
-// import Transcript from "../Pages/Transcript";
+import React from "react";
 
 const AttendanceCard = ({ data }) => {
-  const plan = data;
+  const attendance = data;
 
   return (
     <div className="withdraw-card">
-      {plan.map((planItem) => {
+      {attendance.map((attendanceItem) => {
         return (
           <>
             <div className="withdraw-card__header d-flex">
-              <h5>
-                Semester {planItem.semesterNo} - {planItem.semesterName}
-              </h5>
+              <h5>Semester - {attendanceItem.SemesterName}</h5>
             </div>
             <div className="withdraw-card__body">
               <table>
@@ -20,18 +18,21 @@ const AttendanceCard = ({ data }) => {
                   <th>Course Name</th>
                   <th>Type</th>
                   <th>Credit Hrs.</th>
-                  <th>Review</th>
                   <th>Percentage</th>
+                  <th>Review</th>
                 </tr>
-                {planItem.courses.map((course) => {
+                {attendanceItem.courses.map((course) => {
                   return (
                     <tr>
-                      <td>{course.code}</td>
-                      <td>{course.cname}</td>
-                      <td>{course.type}</td>
-                      <td>{course.chours}</td>
+                      <td>{course.CourseCode}</td>
+                      <td>{course.CourseName}</td>
+                      <td>{course.Type}</td>
+                      <td>{course.CreditHours}</td>
+                      <td>{course.Percentage}</td>
                       <td>
-                        <button className="btn btn-primary">Request for Modification</button>
+                        <button className="btn btn-primary">
+                          Request for Modification
+                        </button>
                       </td>
                     </tr>
                   );
@@ -46,8 +47,3 @@ const AttendanceCard = ({ data }) => {
 };
 
 export default AttendanceCard;
-
-
-
-
-

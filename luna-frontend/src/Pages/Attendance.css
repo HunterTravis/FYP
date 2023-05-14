@@ -1,0 +1,15 @@
+.sem-selector {
+    text-align: center;
+}
+
+.sem-selector select {
+    background-color: #0b5271;
+    width: 120px;
+    height: 35px;
+    border: 1px solid #0b5271;
+    border-radius: 5px;
+    padding: 0 5px;
+    color: white;
+    appearance: none;
+    outline: none;
+}

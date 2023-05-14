@@ -29,3 +29,7 @@ h1 {
   .course-page {
     flex-grow: 1;
   }
+
+  a {
+    text-decoration: none;
+  }
