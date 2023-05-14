@@ -1,0 +1,13 @@
+.info-title {
+    background-color: #0b5271;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.info-body {
+    font-weight: bold;
+    font-size: 15px;
+}
