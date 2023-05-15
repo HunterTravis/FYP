@@ -8,11 +8,11 @@ const app = express();
 const cors = require("cors");
 app.use(cors({ origin: "*" }));
 
-const CourseRegistrationData = require("./routes/CourseRegistration");
+const CourseRegistrationData = require("./routes/Student/CourseRegistration");
 const authRoutes = require("./routes/auth");
-const Attendance = require("./routes/Attendance");
-const Courses = require("./routes/Courses");
-const Marks = require("./routes/Marks");
+const Attendance = require("./routes/Student/Attendance");
+const Courses = require("./routes/Student/Courses");
+const Marks = require("./routes/Student/Marks");
 app.use("/auth", authRoutes);
 app.use("/CourseRegistration", CourseRegistrationData);
 app.use("/Attendance", Attendance);
