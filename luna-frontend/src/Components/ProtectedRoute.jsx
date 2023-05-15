@@ -1,13 +1,13 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import {useCookies} from 'react-cookie';
+import { useCookies } from "react-cookie";
 function ProtectedRoute(props) {
-  const [cookies, setCookie] = useCookies(['user']);
+  const [cookies, setCookie] = useCookies(["user"]);
   const { Component } = props;
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (cookies.LoggedIn!="true") {
+    if (cookies.LoggedIn != "true") {
       navigate("/");
     }
   });

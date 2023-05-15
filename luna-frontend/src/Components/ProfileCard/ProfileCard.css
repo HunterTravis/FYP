@@ -1,3 +1,12 @@
+.profile-card {
+    margin-top: 10px;
+}
+
+.info {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
 .info-title {
     background-color: #0b5271;
     height: 50px;
@@ -8,6 +17,25 @@
 }
 
 .info-body {
+    background-color: lightsteelblue;
+    width: 100%;
+    padding: 10px;
     font-weight: bold;
     font-size: 15px;
+}
+
+.father, .mother {
+    width: 50%;
+}
+
+table {
+    width: 100%;
+}
+
+tr {
+    height: 40px;
+}
+
+td {
+    width: 50%;
 }

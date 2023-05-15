@@ -1,8 +1,8 @@
 import { ColorModeContext, useMode } from "./theme";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import Login from "./Pages/Login";
-import Dashboard from "./Pages/dashboard/index";
-import ProfileInformation from "./Pages/ProfileInformation";
+// import Dashboard from "./Pages/dashboard/index";
+import StudentHome from "./Pages/Home/Home";
 import CourseRegistration from "./Pages/CourseRegistration";
 import Assignments from "./Pages/Assignments/Assignments";
 import { Routes, Route } from "react-router-dom";
@@ -36,13 +36,13 @@ function App() {
           <Routes>
             <Route path="/" element={<Login />} />
             <Route element={<Layout />}>
-              <Route
+              {/* <Route
                 path="/dashboard"
                 element={<ProtectedRoute Component={Dashboard} />}
-              />
+              /> */}
               <Route
-                path="/ProfileInformation"
-                element={<ProtectedRoute Component={ProfileInformation} />}
+                path="/student-home"
+                element={<ProtectedRoute Component={StudentHome} />}
               />
               <Route
                 path="/registration"
@@ -60,10 +60,10 @@ function App() {
                 path="/courses"
                 element={<ProtectedRoute Component={Courses} />}
               />
-              <Route
+              {/* <Route
                 path="/card-change"
                 element={<ProtectedRoute Component={Dashboard} />}
-              />
+              /> */}
               <Route
                 path="/feedback"
                 element={<ProtectedRoute Component={CourseFeedback} />}
