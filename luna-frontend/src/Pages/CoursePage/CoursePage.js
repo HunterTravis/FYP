@@ -161,7 +161,11 @@ const CoursePage = () => {
                   <div>
                     <Link
                       to="/assignmentSubmission"
-                      // state={{ assignmentTitle: assignment.title }}
+                      state={{
+                        assignmentTitle: assignment.title,
+                        assignmentDescription: assignment.description,
+                        assignmentDueDate: assignment.dueDate,
+                      }}
                     >
                       <AssignmentCard
                         title={assignment.title}
