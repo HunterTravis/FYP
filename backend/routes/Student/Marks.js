@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const router = express.Router();
-const connection = require("../requires/connection.js");
+const connection = require("../../requires/connection.js");
 const { gridColumnGroupsLookupSelector } = require("@mui/x-data-grid");
 
 router.use(bodyParser.json());
