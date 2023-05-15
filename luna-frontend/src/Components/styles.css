@@ -5,6 +5,7 @@
 .marks-card__header, .withdraw-card__header, .challan-card__header, .grade-card__header {
     background-color: #0b5271;
     height: 50px;
+    /* display: flex; */
     align-items: center;
     padding: 0 10px;
     color: white;
