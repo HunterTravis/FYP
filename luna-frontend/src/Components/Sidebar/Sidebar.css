@@ -1,13 +1,9 @@
-.container {
-    padding-top:10px;
-}
 .sidebar {
     overflow: hidden;
     position: fixed;
     background-color: #003248;
     height: 100%;
     font-size: 16px;
-    padding: 5px 0;
 }
 
 .sidebar:hover {

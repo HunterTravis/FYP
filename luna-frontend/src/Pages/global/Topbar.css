@@ -1,5 +1,5 @@
 .topbar{
-    overflow: hidden;
+  overflow: hidden;
   position: fixed; 
   top: 0;
   height:7.5%;
@@ -11,9 +11,9 @@
 }
 .linko{
   color:white;
-    text-decoration: none;
+  text-decoration: none;
 }
 .buttono{
   color:white;
-    text-decoration: none;
+  text-decoration: none;
 }

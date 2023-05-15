@@ -1,6 +1,7 @@
 import "./Sidebar.css";
 import { Link } from "react-router-dom";
 // import DashboardIcon from "@mui/icons-material/Dashboard";
+import HomeIcon from "@mui/icons-material/Home";
 import AppRegistrationIcon from "@mui/icons-material/AppRegistration";
 import AutoGraphIcon from "@mui/icons-material/AutoGraph";
 import CheckIcon from "@mui/icons-material/Check";
@@ -19,6 +20,14 @@ const Sidebar = ({ role }) => {
   if (role === "student") {
     return (
       <div className="sidebar">
+        <Link to="/student-home" className="sidebar-link">
+          <div className="sidebar-item" tabIndex={-1}>
+            <div className="sidebar-icon">
+              <HomeIcon />
+            </div>
+            <div className="sidebar-text">Home</div>
+          </div>
+        </Link>
         <Link to="/registration" className="sidebar-link">
           <div className="sidebar-item" tabIndex={-1}>
             <div className="sidebar-icon">
@@ -32,9 +41,7 @@ const Sidebar = ({ role }) => {
             <div className="sidebar-icon">
               <AutoGraphIcon />
             </div>
-            <div className="sidebar-text" align="left">
-              Attendance
-            </div>
+            <div className="sidebar-text">Attendance</div>
           </div>
         </Link>
         <Link to="/courses" className="sidebar-link">
@@ -125,14 +132,20 @@ const Sidebar = ({ role }) => {
   } else if (role === "teacher") {
     return (
       <div className="sidebar">
+        <Link to="/teacher-home" className="sidebar-link">
+          <div className="sidebar-item" tabIndex={-1}>
+            <div className="sidebar-icon">
+              <HomeIcon />
+            </div>
+            <div className="sidebar-text">Home</div>
+          </div>
+        </Link>
         <Link to="/teacher-attendance" className="sidebar-link">
           <div className="sidebar-item" tabIndex={-1}>
             <div className="sidebar-icon">
               <AutoGraphIcon />
             </div>
-            <div className="sidebar-text" align="left">
-              Attendance
-            </div>
+            <div className="sidebar-text">Attendance</div>
           </div>
         </Link>
         <Link to="/teacher-courses" className="sidebar-link">

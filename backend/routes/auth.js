@@ -24,7 +24,7 @@ router.post("/login", (req, res) => {
         ) {
           res.send({
             status: 200,
-            navigation: "/dashboard",
+            navigation: "/student-home",
             role: result[0].role,
           });
         } else if (
