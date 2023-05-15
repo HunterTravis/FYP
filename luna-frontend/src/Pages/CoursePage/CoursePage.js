@@ -1,11 +1,26 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./CoursePage.css";
+import { useState } from "react";
 import { useLocation, Link } from "react-router-dom";
 import AssignmentCard from "../../Components/AssignmentCard/AssignmentCard";
 
 const CoursePage = () => {
+  const [data, setData] = useState([]);
   const location = useLocation();
   const { courseHead } = location.state;
+  useEffect(() => {
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ data: 'example data' })
+    };
+
+    fetch('http://localhost:3001/coursePage', requestOptions)
+      .then(response => response.json())
+      .then(data => console.log(data))
+      .catch(error => console.log(error));
+  }, []);
+
 
   const announcements = [
     {
