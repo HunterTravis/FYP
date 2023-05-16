@@ -7,7 +7,6 @@ import AssignmentCard from "../../Components/AssignmentCard/AssignmentCard";
 
 const CoursePage = () => {
   const [cookies, setCookie] = useCookies(["user"]);
-  const [data, setData] = useState([]);
   const location = useLocation();
   const [announcements, setAnnouncements] = useState([]);
   const [assignments, setAssignments] = useState([]);
@@ -35,7 +34,6 @@ const CoursePage = () => {
           setAnnouncements(data.announcements);
           setAssignments(data.assignments);
           setResources(data.resources);
-          console.log(announcements, assignments, resources);
         } else {
           alert(data.message);
         }
@@ -182,6 +180,8 @@ const CoursePage = () => {
                   <div>
                     <h5>{resource.name}</h5>
                     <p>{resource.description}</p>
+                    
+                    <iframe src={"http://localhost:3001/files/"+resource.url} title="File Preview" width="100%" height="100vh" ></iframe>
                   </div>
                 </li>
               ))}

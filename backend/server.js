@@ -1,8 +1,10 @@
 //importing express
 const express = require("express");
-
+const path = require('path');
 //starting express server object
 const app = express();
+
+app.use('/files', express.static('E:/'));
 
 //handled CORS error
 const cors = require("cors");
