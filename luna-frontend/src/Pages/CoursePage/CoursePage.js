@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useLocation, Link } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import AssignmentCard from "../../Components/AssignmentCard/AssignmentCard";
+import ResourceCard from "../../Components/ResourceCard/ResourceCard";
 
 const CoursePage = () => {
   const [cookies, setCookie] = useCookies(["user"]);
@@ -163,8 +164,6 @@ const CoursePage = () => {
                         dueDate={assignment.dueDate}
                       />
                     </Link>
-                    {/* <h5>{}</h5>
-                    <p>{assignment.description}</p> */}
                   </div>
                 </li>
               ))}
@@ -175,10 +174,11 @@ const CoursePage = () => {
               {resources.map((resource) => (
                 <li>
                   <div>
-                    <h5>{resource.name}</h5>
-                    <p>{resource.description}</p>
-                    
-                    <iframe src={resource.url} title="File Preview" width="100%" height="100vh" ></iframe>
+                    <ResourceCard
+                      resourceName={resource.name}
+                      resourceDescription={resource.description}
+                      resourceLink={resource.url}
+                    />
                   </div>
                 </li>
               ))}
