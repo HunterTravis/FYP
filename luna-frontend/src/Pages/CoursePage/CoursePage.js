@@ -6,13 +6,15 @@ import { useCookies } from "react-cookie";
 import AssignmentCard from "../../Components/AssignmentCard/AssignmentCard";
 
 const CoursePage = () => {
-  
   const [cookies, setCookie] = useCookies(["user"]);
   const [data, setData] = useState([]);
   const location = useLocation();
-  let announcements = [];
-  let assignments = [];
-  let resources = [];
+  const [announcements, setAnnouncements] = useState([]);
+  const [assignments, setAssignments] = useState([]);
+  const [resources, setResources] = useState([]);
+  // var announcements = [];
+  // var assignments = [];
+  // var resources = [];
 
   const { courseHead, section } = location.state;
   useEffect(() => {
@@ -21,13 +23,18 @@ const CoursePage = () => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ username:cookies.username, courseCode:courseHead, section:section })})
+      body: JSON.stringify({
+        username: cookies.username,
+        courseCode: courseHead,
+        section: section,
+      }),
+    })
       .then((response) => response.json())
       .then((data) => {
         if (data) {
-          announcements=data.announcements;
-          assignments=data.assignments;
-          resources=data.resources;
+          setAnnouncements(data.announcements);
+          setAssignments(data.assignments);
+          setResources(data.resources);
           console.log(announcements, assignments, resources);
         } else {
           alert(data.message);
@@ -36,16 +43,11 @@ const CoursePage = () => {
       .catch((error) => {
         console.log(error);
       });
-    
   }, []);
-
-
-  
 
   return (
     <div className="course-page">
       <div className="container">
-        {/* Course name */}
         <h1>{courseHead}</h1>
         <div className="course-page__content-list">
           <ul className="nav nav-tabs" role="tablist">
