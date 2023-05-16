@@ -21,7 +21,7 @@ import CoursePage from "./Pages/CoursePage/CoursePage";
 import AssignmentSubmission from "./Pages/AssignmentSubmission/AssignmentSubmission";
 import TeacherHome from "./Teacher/Home";
 import TeacherAttendance from "./Teacher/Attendance";
-import TeacherCourses from "./Teacher/Courses";
+import TeacherCourses from "./Teacher/Courses/Courses";
 import TeacherMarks from "./Teacher/Marks";
 import TeacherGradeChangeRequest from "./Teacher/GradeChangeRequest";
 import ProtectedRoute from "./Components/ProtectedRoute";
