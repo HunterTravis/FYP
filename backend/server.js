@@ -10,9 +10,11 @@ app.use(cors({ origin: "*" }));
 
 const CourseRegistrationData = require("./routes/Student/CourseRegistration");
 const authRoutes = require("./routes/auth");
+const coursePage = require("./routes/Student/CoursePage");
 const Attendance = require("./routes/Student/Attendance");
 const Courses = require("./routes/Student/Courses");
 const Marks = require("./routes/Student/Marks");
+app.use("/coursePage", coursePage)
 app.use("/auth", authRoutes);
 app.use("/CourseRegistration", CourseRegistrationData);
 app.use("/Attendance", Attendance);
