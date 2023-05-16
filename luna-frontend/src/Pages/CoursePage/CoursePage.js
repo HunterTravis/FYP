@@ -11,9 +11,6 @@ const CoursePage = () => {
   const [announcements, setAnnouncements] = useState([]);
   const [assignments, setAssignments] = useState([]);
   const [resources, setResources] = useState([]);
-  // var announcements = [];
-  // var assignments = [];
-  // var resources = [];
 
   const { courseHead, section } = location.state;
   useEffect(() => {
