@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-// import { useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import "./AssignmentSubmission.css";
 
 function AssignmentSubmission() {
-  // const location = useLocation();
-  // const { assignmentTitle } = location.state;
+  const location = useLocation();
+  const { assignmentTitle, assignmentDescription, assignmentDueDate } =
+    location.state;
   // console.log(assignmentTitle);
   // State for user uploaded files
   const [userFiles, setUserFiles] = useState([]);
@@ -36,8 +37,8 @@ function AssignmentSubmission() {
     <div className="assignment-submission">
       <div className="left-pane">
         <div className="assignment-header">
-          <h1>Assignment Title</h1>
-          <p>Assignment Description</p>
+          <h1>{assignmentTitle}</h1>
+          <p>{assignmentDescription}</p>
         </div>
         <div className="attached-resources">
           {/* <h2>Attached Resources</h2> */}
@@ -50,7 +51,8 @@ function AssignmentSubmission() {
               value={userComments}
               onChange={(e) => setUserComments(e.target.value)}
               placeholder="Add your comments here"
-            />
+            ></textarea>
+            {/* <button>Post</button> */}
           </div>
           <div className="public-comments">
             Public comments from other students and instructor
@@ -74,12 +76,12 @@ function AssignmentSubmission() {
           </div>
         </div>
         <div className="private-comments">
-          <h2>Private Comments from Instructor</h2>
+          <h2>Private Comments</h2>
           <textarea
             value={privateComments}
             onChange={(e) => setPrivateComments(e.target.value)}
             placeholder="Add private comments here"
-          />
+          ></textarea>
         </div>
       </div>
     </div>
