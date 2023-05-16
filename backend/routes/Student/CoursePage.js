@@ -10,7 +10,6 @@ router.post("/", async (req, res) => {
     const username = req.body.username;
     const courseCode = req.body.courseCode;
     const section = req.body.section;
-    console.log(username, courseCode, section)
     const data = {
         assignments: [],
         announcements: [],
@@ -34,7 +33,6 @@ router.post("/", async (req, res) => {
                   semester: row.Semester
                 });
               });
-              //console.log(data)
         }
     });
     await connection.query("SELECT AnnouncementID, Text, Date, Time, TeacherID FROM Announcements WHERE CourseCode = '"+courseCode+"' AND Section = '"+section+"';", (err, result) => {
@@ -67,7 +65,6 @@ router.post("/", async (req, res) => {
                   timeUploaded: row.TimeUploaded
                 });
               });
-              console.log(data)
               res.json(data);
         }
     });
