@@ -1,8 +1,10 @@
 //importing express
 const express = require("express");
-
+const path = require('path');
 //starting express server object
 const app = express();
+
+app.use('/files', express.static('E:/'));
 
 //handled CORS error
 const cors = require("cors");
@@ -14,7 +16,10 @@ const coursePage = require("./routes/Student/CoursePage");
 const Attendance = require("./routes/Student/Attendance");
 const Courses = require("./routes/Student/Courses");
 const Marks = require("./routes/Student/Marks");
+const AssignmentSubmission = require("./routes/Student/AssignmentSubmission");
+
 app.use("/coursePage", coursePage)
+app.use("/AssignmentSubmission", AssignmentSubmission);
 app.use("/auth", authRoutes);
 app.use("/CourseRegistration", CourseRegistrationData);
 app.use("/Attendance", Attendance);
