@@ -40,6 +40,8 @@ const CoursePage = () => {
       });
   }, []);
 
+
+
   return (
     <div className="course-page">
       <div className="container">
@@ -156,6 +158,7 @@ const CoursePage = () => {
                         assignmentTitle: assignment.name,
                         assignmentDescription: assignment.description,
                         assignmentDueDate: assignment.dueDate,
+                        assignmentID:assignment.id,
                       }}
                     >
                       <AssignmentCard
