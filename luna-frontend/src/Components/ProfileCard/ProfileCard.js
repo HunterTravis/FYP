@@ -11,7 +11,7 @@ function ProfileCard({ student }) {
           <h2>University Information</h2>
         </div>
         <div className="info-body">
-          <table>
+          <table className="info-table">
             <tr>
               <td>
                 Roll No: {mockStudentData.UniversityInformation.RollNumber}
@@ -35,7 +35,7 @@ function ProfileCard({ student }) {
           <h2>Personal Information</h2>
         </div>
         <div className="info-body">
-          <table>
+          <table className="info-table">
             <tr>
               <td>Name: {mockStudentData.PersonalInformation.Name}</td>
               <td>CNIC: {mockStudentData.PersonalInformation.CNIC}</td>
@@ -59,7 +59,7 @@ function ProfileCard({ student }) {
           <h2>Contact Information</h2>
         </div>
         <div className="info-body">
-          <table>
+          <table className="info-table">
             <tr>
               <td>Address: {mockStudentData.ContactInformation.Address}</td>
               <td>

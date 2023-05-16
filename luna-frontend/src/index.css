@@ -27,8 +27,8 @@ code {
 .container {
   width: 100%;
   height: 100%;
-  margin-top:4%;
-  margin-bottom: 4%;
+  margin-top: 2%;
+  margin-bottom: 2%;
 }
 
 .DisplayContainer {
@@ -166,6 +166,7 @@ code {
 .challan-card__body, .withdraw-card__body, .grade-card__body {
   background-color: white;
   padding: 10px;
+  width:fit-content;
 }
 
 .challan-card__body table, .accordion-body table, .withdraw-card__body table, .grade-card__body table {
@@ -182,6 +183,7 @@ code {
 .challan-card__body td, .accordion-body td, .withdraw-card__body td, .grade-card__body td {
   background-color: white;
   padding: 10px;
+  width: fit-content;
 }
 
 .withdraw-card__body table tr td:nth-child(2), .withdraw-card__body table tr th:nth-child(2), .grade-card__body table tr td:nth-child(2), .grade-card__body table tr th:nth-child(2) {
