@@ -25,6 +25,7 @@ import TeacherCourses from "./Teacher/Courses";
 import TeacherMarks from "./Teacher/Marks";
 import TeacherGradeChangeRequest from "./Teacher/GradeChangeRequest";
 import ProtectedRoute from "./Components/ProtectedRoute";
+import TeacherCoursePage from "./Teacher/CoursePage/CoursePage";
 
 function App() {
   const [theme, colorMode] = useMode();
@@ -125,6 +126,10 @@ function App() {
                 element={
                   <ProtectedRoute Component={TeacherGradeChangeRequest} />
                 }
+              />
+              <Route
+                path="/teacher-course-page"
+                element={<ProtectedRoute Component={TeacherCoursePage} />}
               />
             </Route>
           </Routes>
