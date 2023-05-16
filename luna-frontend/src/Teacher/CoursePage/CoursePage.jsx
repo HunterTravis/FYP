@@ -1,52 +1,26 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./CoursePage.css";
+import { useCookies } from "react-cookie";
 import { useLocation, Link } from "react-router-dom";
+import { mockCoursePage } from "../../data/teacherCoursePage";
 import AssignmentCard from "../../Components/AssignmentCard/AssignmentCard";
+import ResourceCard from "../../Components/ResourceCard/ResourceCard";
 
 const TeacherCoursePage = () => {
+  const [cookies, setCookie] = useCookies(["user"]);
   const location = useLocation();
   const { courseHead } = location.state;
 
-  const announcements = [
-    {
-      id: 1,
-      title: "Announcement 1",
-      description: "This is the first announcement",
-    },
-    {
-      id: 2,
-      title: "Announcement 2",
-      description: "This is the second announcement",
-    },
-  ];
+  const [announcements, setAnnouncements] = useState([]);
+  const [assignments, setAssignments] = useState([]);
+  const [resources, setResources] = useState([]);
 
-  const assignments = [
-    {
-      id: 1,
-      title: "Assignment 1",
-      description: "This is the first assignment",
-      dueDate: "23 Mar",
-    },
-    {
-      id: 2,
-      title: "Assignment 2",
-      description: "This is the second assignment",
-      dueDate: "05 Apr",
-    },
-  ];
-
-  const resources = [
-    {
-      id: 1,
-      title: "Resource 1",
-      description: "This is the first resource",
-    },
-    {
-      id: 2,
-      title: "Resource 2",
-      description: "This is the second resource",
-    },
-  ];
+  useEffect(() => {
+    setAnnouncements(mockCoursePage.announcements);
+    setAssignments(mockCoursePage.assignments);
+    setResources(mockCoursePage.resources);
+    console.log(mockCoursePage.announcements);
+  }, []);
 
   return (
     <div className="course-page">
@@ -160,8 +134,12 @@ const TeacherCoursePage = () => {
                 <li>
                   <div>
                     <Link
-                      to="/assignmentSubmission"
-                      // state={{ assignmentTitle: assignment.title }}
+                      to="/teacher-assignment-submission"
+                      state={{
+                        assignmentTitle: assignment.title,
+                        assignmentID: assignment.id,
+                        teacherID: cookies.username,
+                      }}
                     >
                       <AssignmentCard
                         title={assignment.title}
@@ -180,8 +158,11 @@ const TeacherCoursePage = () => {
               {resources.map((resource) => (
                 <li>
                   <div>
-                    <h5>{resource.title}</h5>
-                    <p>{resource.description}</p>
+                    <ResourceCard
+                      resourceName={resource.name}
+                      resourceDescription={resource.description}
+                      resourceLink={resource.url}
+                    />
                   </div>
                 </li>
               ))}
