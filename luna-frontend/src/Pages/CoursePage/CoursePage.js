@@ -178,7 +178,7 @@ const CoursePage = () => {
                     <h5>{resource.name}</h5>
                     <p>{resource.description}</p>
                     
-                    <iframe src={"http://localhost:3001/files/"+resource.url} title="File Preview" width="100%" height="100vh" ></iframe>
+                    <iframe src={resource.url} title="File Preview" width="100%" height="100vh" ></iframe>
                   </div>
                 </li>
               ))}
