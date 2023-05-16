@@ -1,9 +1,12 @@
 import React from "react";
 import "./CoursePage.css";
+import { useCookies } from "react-cookie";
 import { useLocation, Link } from "react-router-dom";
 import AssignmentCard from "../../Components/AssignmentCard/AssignmentCard";
+import ResourceCard from "../../Components/ResourceCard/ResourceCard";
 
 const TeacherCoursePage = () => {
+  const [cookies, setCookie] = useCookies(["user"]);
   const location = useLocation();
   const { courseHead } = location.state;
 
@@ -160,8 +163,12 @@ const TeacherCoursePage = () => {
                 <li>
                   <div>
                     <Link
-                      to="/assignmentSubmission"
-                      // state={{ assignmentTitle: assignment.title }}
+                      to="/teacher-assignment-submission"
+                      state={{
+                        assignmentTitle: assignment.title,
+                        assignmentID: assignment.id,
+                        teacherID: cookies.username,
+                      }}
                     >
                       <AssignmentCard
                         title={assignment.title}
@@ -180,8 +187,11 @@ const TeacherCoursePage = () => {
               {resources.map((resource) => (
                 <li>
                   <div>
-                    <h5>{resource.title}</h5>
-                    <p>{resource.description}</p>
+                    <ResourceCard
+                      resourceName={resource.name}
+                      resourceDescription={resource.description}
+                      resourceLink={resource.url}
+                    />
                   </div>
                 </li>
               ))}

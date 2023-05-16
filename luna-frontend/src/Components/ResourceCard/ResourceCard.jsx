@@ -1,8 +1,10 @@
 import React from "react";
+import { useCookies } from "react-cookie";
 import "./ResourceCard.css";
 
 const ResourceCard = (props) => {
   const { resourceName, resourceDescription, resourceLink } = props;
+  const [cookies, setCookie] = useCookies(["user"]);
 
   const handleDownload = (name, link) => {
     const Link = document.createElement("a");
@@ -13,6 +15,8 @@ const ResourceCard = (props) => {
     document.body.removeChild(Link);
   };
 
+  const handleDelete = () => {};
+
   return (
     <div className="assignment-card d-flex justify-content-between">
       <div className="assignment__title">
@@ -20,12 +24,26 @@ const ResourceCard = (props) => {
         <p>{resourceDescription}</p>
       </div>
       <div className="assignment__dueDate">
-        <button
-          className="btn btn-primary"
-          onClick={() => handleDownload(resourceName, resourceLink)}
-        >
-          Open
-        </button>
+        {cookies.role === "teacher" ? (
+          <div>
+            <button
+              className="btn btn-primary"
+              onClick={() => handleDownload(resourceName, resourceLink)}
+            >
+              Open
+            </button>
+            <button className="btn btn-danger" onClick={() => handleDelete()}>
+              Delete
+            </button>
+          </div>
+        ) : (
+          <button
+            className="btn btn-primary"
+            onClick={() => handleDownload(resourceName, resourceLink)}
+          >
+            Open
+          </button>
+        )}
       </div>
     </div>
   );
