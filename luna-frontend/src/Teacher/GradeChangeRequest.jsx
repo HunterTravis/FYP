@@ -20,9 +20,11 @@ function TeacherGradeChangeRequest(props) {
   ];
 
   return (
-    <div>
-      <h1>Grade Change Request</h1>
-      <TeacherGradeCard data={data} />
+    <div className="grade-change-request">
+      <div className="container">
+        <h1>Grade Change Request</h1>
+        <TeacherGradeCard data={data} />
+      </div>
     </div>
   );
 }

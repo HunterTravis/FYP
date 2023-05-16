@@ -2,8 +2,10 @@ import React from "react";
 
 function TeacherAttendance(props) {
   return (
-    <div>
-      <h1>Attendance</h1>
+    <div className="attendance">
+      <div className="container">
+        <h1>Attendance</h1>
+      </div>
     </div>
   );
 }
