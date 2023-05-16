@@ -4,17 +4,14 @@ import { useState } from "react";
 import { useLocation, Link } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import AssignmentCard from "../../Components/AssignmentCard/AssignmentCard";
+import ResourceCard from "../../Components/ResourceCard/ResourceCard";
 
 const CoursePage = () => {
   const [cookies, setCookie] = useCookies(["user"]);
-  const [data, setData] = useState([]);
   const location = useLocation();
   const [announcements, setAnnouncements] = useState([]);
   const [assignments, setAssignments] = useState([]);
   const [resources, setResources] = useState([]);
-  // var announcements = [];
-  // var assignments = [];
-  // var resources = [];
 
   const { courseHead, section } = location.state;
   useEffect(() => {
@@ -35,7 +32,6 @@ const CoursePage = () => {
           setAnnouncements(data.announcements);
           setAssignments(data.assignments);
           setResources(data.resources);
-          console.log(announcements, assignments, resources);
         } else {
           alert(data.message);
         }
@@ -44,6 +40,8 @@ const CoursePage = () => {
         console.log(error);
       });
   }, []);
+
+
 
   return (
     <div className="course-page">
@@ -161,6 +159,7 @@ const CoursePage = () => {
                         assignmentTitle: assignment.name,
                         assignmentDescription: assignment.description,
                         assignmentDueDate: assignment.dueDate,
+                        assignmentID:assignment.id,
                       }}
                     >
                       <AssignmentCard
@@ -168,8 +167,6 @@ const CoursePage = () => {
                         dueDate={assignment.dueDate}
                       />
                     </Link>
-                    {/* <h5>{}</h5>
-                    <p>{assignment.description}</p> */}
                   </div>
                 </li>
               ))}
@@ -180,8 +177,11 @@ const CoursePage = () => {
               {resources.map((resource) => (
                 <li>
                   <div>
-                    <h5>{resource.name}</h5>
-                    <p>{resource.description}</p>
+                    <ResourceCard
+                      resourceName={resource.name}
+                      resourceDescription={resource.description}
+                      resourceLink={resource.url}
+                    />
                   </div>
                 </li>
               ))}
