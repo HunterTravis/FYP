@@ -1,57 +1,49 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./CoursePage.css";
+import { useState } from "react";
 import { useLocation, Link } from "react-router-dom";
+import { useCookies } from "react-cookie";
 import AssignmentCard from "../../Components/AssignmentCard/AssignmentCard";
+import ResourceCard from "../../Components/ResourceCard/ResourceCard";
 
 const CoursePage = () => {
+  const [cookies, setCookie] = useCookies(["user"]);
   const location = useLocation();
-  const { courseHead } = location.state;
+  const [announcements, setAnnouncements] = useState([]);
+  const [assignments, setAssignments] = useState([]);
+  const [resources, setResources] = useState([]);
 
-  const announcements = [
-    {
-      id: 1,
-      title: "Announcement 1",
-      description: "This is the first announcement",
-    },
-    {
-      id: 2,
-      title: "Announcement 2",
-      description: "This is the second announcement",
-    },
-  ];
-
-  const assignments = [
-    {
-      id: 1,
-      title: "Assignment 1",
-      description: "This is the first assignment",
-      dueDate: "23 Mar",
-    },
-    {
-      id: 2,
-      title: "Assignment 2",
-      description: "This is the second assignment",
-      dueDate: "05 Apr",
-    },
-  ];
-
-  const resources = [
-    {
-      id: 1,
-      title: "Resource 1",
-      description: "This is the first resource",
-    },
-    {
-      id: 2,
-      title: "Resource 2",
-      description: "This is the second resource",
-    },
-  ];
+  const { courseHead, section } = location.state;
+  useEffect(() => {
+    fetch("http://localhost:3001/coursePage", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        username: cookies.username,
+        courseCode: courseHead,
+        section: section,
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data) {
+          setAnnouncements(data.announcements);
+          setAssignments(data.assignments);
+          setResources(data.resources);
+        } else {
+          alert(data.message);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
 
   return (
     <div className="course-page">
       <div className="container">
-        {/* Course name */}
         <h1>{courseHead}</h1>
         <div className="course-page__content-list">
           <ul className="nav nav-tabs" role="tablist">
@@ -115,8 +107,8 @@ const CoursePage = () => {
               {announcements.map((announcement) => (
                 <li>
                   <div>
-                    <h5>{announcement.title}</h5>
-                    <p>{announcement.description}</p>
+                    <h5>Announcement: {announcement.id}</h5>
+                    <p>{announcement.text}</p>
                   </div>
                 </li>
               ))}
@@ -125,7 +117,7 @@ const CoursePage = () => {
               {assignments.map((assignment) => (
                 <li>
                   <div>
-                    <h5>{assignment.title}</h5>
+                    <h5>{assignment.name}</h5>
                     <p>{assignment.description}</p>
                   </div>
                 </li>
@@ -135,7 +127,7 @@ const CoursePage = () => {
               {resources.map((resource) => (
                 <li>
                   <div>
-                    <h5>{resource.title}</h5>
+                    <h5>{resource.name}</h5>
                     <p>{resource.description}</p>
                   </div>
                 </li>
@@ -147,8 +139,8 @@ const CoursePage = () => {
               {announcements.map((announcement) => (
                 <li>
                   <div>
-                    <h5>{announcement.title}</h5>
-                    <p>{announcement.description}</p>
+                    <h5>Announcement: {announcement.id}</h5>
+                    <p>{announcement.text}</p>
                   </div>
                 </li>
               ))}
@@ -162,18 +154,17 @@ const CoursePage = () => {
                     <Link
                       to="/assignmentSubmission"
                       state={{
-                        assignmentTitle: assignment.title,
+                        assignmentTitle: assignment.name,
                         assignmentDescription: assignment.description,
                         assignmentDueDate: assignment.dueDate,
+                        assignmentID: assignment.id,
                       }}
                     >
                       <AssignmentCard
-                        title={assignment.title}
+                        title={assignment.name}
                         dueDate={assignment.dueDate}
                       />
                     </Link>
-                    {/* <h5>{}</h5>
-                    <p>{assignment.description}</p> */}
                   </div>
                 </li>
               ))}
@@ -184,8 +175,11 @@ const CoursePage = () => {
               {resources.map((resource) => (
                 <li>
                   <div>
-                    <h5>{resource.title}</h5>
-                    <p>{resource.description}</p>
+                    <ResourceCard
+                      resourceName={resource.name}
+                      resourceDescription={resource.description}
+                      resourceLink={resource.url}
+                    />
                   </div>
                 </li>
               ))}

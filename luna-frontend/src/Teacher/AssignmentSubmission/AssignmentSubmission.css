@@ -1,0 +1,17 @@
+.list {
+    flex-direction: column;
+}
+
+.list-item {
+    padding: 10px;
+    flex-direction: column;
+    justify-content: center;
+    color: black;
+}
+
+.nav-item {
+    width: fit-content;
+    background-color: lightsteelblue;
+    margin: 5px;
+    border-radius: 5px;
+}
