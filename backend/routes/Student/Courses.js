@@ -40,6 +40,7 @@ router.post("/", (req, res) => {
                   id: index + 1,
                   courseName: courseCode,
                   assignments: assignments,
+                  section: section,
                 });
                 if (data.length === result.length) {
                   res.send(data);

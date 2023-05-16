@@ -9,7 +9,6 @@ function Courses(props) {
   const [courseData, setCourseData] = useState([]);
 
   useEffect(() => {
-    console.log("asd");
     fetch("http://localhost:3001/Courses", {
       method: "POST",
       headers: {
@@ -21,7 +20,7 @@ function Courses(props) {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data); // logs the list of objects
+        //console.log(data); // logs the list of objects
         setCourseData(data);
       })
       .catch((error) => {
@@ -36,7 +35,7 @@ function Courses(props) {
         <h1>Courses</h1>
         <div className="course-cards mr-0">
           {courseData.map((course) => (
-            <Link to="/coursePage" state={{ courseHead: course.courseName }}>
+            <Link to="/coursePage" state={{ courseHead: course.courseName , section: course.section}}>
               <CourseCard key={course.id} {...course} />
             </Link>
           ))}

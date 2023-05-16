@@ -3,7 +3,7 @@ import "./CourseCard.css";
 
 function CourseCard(props) {
   const { courseCode, assignments, courseName } = props;
-  console.log(props);
+  //console.log(props);
   // courseId,
   return (
     <div className="course-card">

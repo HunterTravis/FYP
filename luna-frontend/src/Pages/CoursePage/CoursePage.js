@@ -2,66 +2,45 @@ import React, { useEffect } from "react";
 import "./CoursePage.css";
 import { useState } from "react";
 import { useLocation, Link } from "react-router-dom";
+import { useCookies } from "react-cookie";
 import AssignmentCard from "../../Components/AssignmentCard/AssignmentCard";
 
 const CoursePage = () => {
+  
+  const [cookies, setCookie] = useCookies(["user"]);
   const [data, setData] = useState([]);
   const location = useLocation();
-  const { courseHead } = location.state;
-  useEffect(() => {
-    const requestOptions = {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ data: 'example data' })
-    };
+  let announcements = [];
+  let assignments = [];
+  let resources = [];
 
-    fetch('http://localhost:3001/coursePage', requestOptions)
-      .then(response => response.json())
-      .then(data => console.log(data))
-      .catch(error => console.log(error));
+  const { courseHead, section } = location.state;
+  useEffect(() => {
+    fetch("http://localhost:3001/coursePage", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ username:cookies.username, courseCode:courseHead, section:section })})
+      .then((response) => response.json())
+      .then((data) => {
+        if (data) {
+          announcements=data.announcements;
+          assignments=data.assignments;
+          resources=data.resources;
+          console.log(announcements, assignments, resources);
+        } else {
+          alert(data.message);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    
   }, []);
 
 
-  const announcements = [
-    {
-      id: 1,
-      title: "Announcement 1",
-      description: "This is the first announcement",
-    },
-    {
-      id: 2,
-      title: "Announcement 2",
-      description: "This is the second announcement",
-    },
-  ];
-
-  const assignments = [
-    {
-      id: 1,
-      title: "Assignment 1",
-      description: "This is the first assignment",
-      dueDate: "23 Mar",
-    },
-    {
-      id: 2,
-      title: "Assignment 2",
-      description: "This is the second assignment",
-      dueDate: "05 Apr",
-    },
-  ];
-
-  const resources = [
-    {
-      id: 1,
-      title: "Resource 1",
-      description: "This is the first resource",
-    },
-    {
-      id: 2,
-      title: "Resource 2",
-      description: "This is the second resource",
-    },
-  ];
+  
 
   return (
     <div className="course-page">
@@ -130,8 +109,8 @@ const CoursePage = () => {
               {announcements.map((announcement) => (
                 <li>
                   <div>
-                    <h5>{announcement.title}</h5>
-                    <p>{announcement.description}</p>
+                    <h5>Announcement: {announcement.id}</h5>
+                    <p>{announcement.text}</p>
                   </div>
                 </li>
               ))}
@@ -140,7 +119,7 @@ const CoursePage = () => {
               {assignments.map((assignment) => (
                 <li>
                   <div>
-                    <h5>{assignment.title}</h5>
+                    <h5>{assignment.name}</h5>
                     <p>{assignment.description}</p>
                   </div>
                 </li>
@@ -150,7 +129,7 @@ const CoursePage = () => {
               {resources.map((resource) => (
                 <li>
                   <div>
-                    <h5>{resource.title}</h5>
+                    <h5>{resource.name}</h5>
                     <p>{resource.description}</p>
                   </div>
                 </li>
@@ -162,8 +141,8 @@ const CoursePage = () => {
               {announcements.map((announcement) => (
                 <li>
                   <div>
-                    <h5>{announcement.title}</h5>
-                    <p>{announcement.description}</p>
+                    <h5>Announcement: {announcement.id}</h5>
+                    <p>{announcement.text}</p>
                   </div>
                 </li>
               ))}
@@ -177,13 +156,13 @@ const CoursePage = () => {
                     <Link
                       to="/assignmentSubmission"
                       state={{
-                        assignmentTitle: assignment.title,
+                        assignmentTitle: assignment.name,
                         assignmentDescription: assignment.description,
                         assignmentDueDate: assignment.dueDate,
                       }}
                     >
                       <AssignmentCard
-                        title={assignment.title}
+                        title={assignment.name}
                         dueDate={assignment.dueDate}
                       />
                     </Link>
@@ -199,7 +178,7 @@ const CoursePage = () => {
               {resources.map((resource) => (
                 <li>
                   <div>
-                    <h5>{resource.title}</h5>
+                    <h5>{resource.name}</h5>
                     <p>{resource.description}</p>
                   </div>
                 </li>
