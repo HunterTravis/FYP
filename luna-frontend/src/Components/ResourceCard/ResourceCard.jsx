@@ -3,7 +3,7 @@ import { useCookies } from "react-cookie";
 import "./ResourceCard.css";
 
 const ResourceCard = (props) => {
-  const { resourceName, resourceDescription, resourceLink } = props;
+  const { resourceID,resourceName, resourceDescription, resourceLink } = props;
   const [cookies, setCookie] = useCookies(["user"]);
 
   const handleDownload = (name, link) => {
@@ -15,7 +15,24 @@ const ResourceCard = (props) => {
     document.body.removeChild(Link);
   };
 
-  const handleDelete = () => {};
+  const handleDelete = () => {
+    fetch("http://localhost:3001/TeacherDeleteResource", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ resourceID: resourceID, username: cookies.username }),
+    }
+    ).then((res) => res.json())
+    .then((data) => {
+      console.log(data);
+      if (data.data=="Resource Deleted") {
+        alert("Resource deleted successfully!");
+        window.location.reload();
+      } else {
+        alert("Resource deletion failed!");
+      }
+    }
+    );
+  };
 
   return (
     <div className="assignment-card d-flex justify-content-between">
@@ -32,7 +49,7 @@ const ResourceCard = (props) => {
             >
               Open
             </button>
-            <button className="btn btn-danger" onClick={() => handleDelete()}>
+            <button className="btn btn-danger" onClick={handleDelete}>
               Delete
             </button>
           </div>

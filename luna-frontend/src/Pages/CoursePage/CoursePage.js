@@ -15,6 +15,7 @@ const CoursePage = () => {
 
   const { courseHead, section } = location.state;
   useEffect(() => {
+    console.log(courseHead, section);
     fetch("http://localhost:3001/coursePage", {
       method: "POST",
       headers: {

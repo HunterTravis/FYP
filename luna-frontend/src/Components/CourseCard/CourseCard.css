@@ -11,6 +11,7 @@
 }
 
 .course-name {
+  text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -22,31 +23,3 @@
   background-color: #ffe600
 }
 
-.course-assignments {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  height: 50%;
-  font-size: 1em;
-  color: #666;
-  background-color: #fff;
-}
-
-.course-assignment {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 80%;
-  margin: 10px 0;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-}
-
-.course-assignment-name {
-  width: 100%;
-  text-align: center;
-}
