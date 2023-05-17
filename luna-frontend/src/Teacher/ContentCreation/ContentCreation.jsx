@@ -16,6 +16,9 @@ function TeacherContentCreation(props) {
         <div className="container">
           <h1>{type} Creation</h1>
           <div className="creation-form">
+            <div className="form-input">
+              <input type="text" placeholder="Title" />
+            </div>
             <div className="form-input-text">
               <textarea rows={5} cols={50}></textarea>
             </div>
