@@ -55,13 +55,13 @@ router.post("/", async (req, res) => {
         } else {
             result.forEach((row) => {
                 data.resources.push({
-                  id: row.ResourceID,
+                  ResourcesID: row.ResourceID,
                   description: row.description,
-                  name: row.ResourceName,
-                  type: row.ResourceType,
-                  url: row.ResourceURL,
-                  dateUploaded: row.DateUploaded,
-                  timeUploaded: row.TimeUploaded
+                  ResourceName: row.ResourceName,
+                  ResourceType: row.ResourceType,
+                  ResourceURL: row.ResourceURL,
+                  DateUploaded: row.DateUploaded,
+                  TimeUploaded: row.TimeUploaded
                 });
               });
               res.json(data);

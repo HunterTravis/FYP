@@ -99,7 +99,7 @@ const TeacherCoursePage = () => {
                 <li>
                   <div>
                     <h5>{announcement.Title}</h5>
-                    <p>{announcement.description}</p>
+                    <p>{announcement.Text}</p>
                   </div>
                 </li>
               ))}
@@ -153,7 +153,7 @@ const TeacherCoursePage = () => {
                       <AssignmentCard
                         title={assignment.AssignmentName}
                         dueDate={assignment.DueDate}
-                        description={assignment.description}
+                        description={assignment.AssignmentDescription}
                         AssignmentID={assignment.AssignmentID}
                       />
                     </Link>
@@ -170,9 +170,9 @@ const TeacherCoursePage = () => {
                     <li>
                       <div>
                         <ResourceCard
-                          resourceName={resource.name}
+                          resourceName={resource.ResrouceName}
                           resourceDescription={resource.description}
-                          resourceLink={resource.url}
+                          resourceLink={resource.ResourceURL}
                         />
                       </div>
                     </li>

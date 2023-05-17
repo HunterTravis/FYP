@@ -7,6 +7,7 @@ const ResourceCard = (props) => {
   const [cookies, setCookie] = useCookies(["user"]);
 
   const handleDownload = (name, link) => {
+    console.log( resourceID,resourceName, resourceDescription, resourceLink);
     const Link = document.createElement("a");
     Link.setAttribute("href", link);
     Link.setAttribute("download", name);
