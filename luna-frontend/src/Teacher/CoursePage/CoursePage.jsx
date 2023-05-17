@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./CoursePage.css";
 import { useCookies } from "react-cookie";
+import { useNavigate } from "react-router-dom";
 import { useLocation, Link } from "react-router-dom";
 import AssignmentCard from "../../Components/AssignmentCard/AssignmentCard";
 import ResourceCard from "../../Components/ResourceCard/ResourceCard";
@@ -158,10 +159,27 @@ const TeacherCoursePage = () => {
                     </Link>
                     {/* <h5>{}</h5>
                     <p>{assignment.description}</p> */}
-                  </div>
-                </li>
-              ))}
-            </ul>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="tab-pane fade" id="Resources" role="tabpanel">
+                <ul>
+                  {resources.map((resource) => (
+                    <li>
+                      <div>
+                        <ResourceCard
+                          resourceName={resource.name}
+                          resourceDescription={resource.description}
+                          resourceLink={resource.url}
+                        />
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
           </div>
           <div className="tab-pane fade" id="Resources" role="tabpanel">
             <ul>
@@ -180,8 +198,6 @@ const TeacherCoursePage = () => {
             </ul>
           </div>
         </div>
-      </div>
-    </div>
   );
 };
 
