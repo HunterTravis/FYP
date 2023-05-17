@@ -18,7 +18,7 @@ const ResourceCard = (props) => {
   const handleDelete = () => {};
 
   return (
-    <div className="assignment-card d-flex justify-content-between">
+    <div className="resource-card d-flex justify-content-between">
       <div className="assignment__title">
         <h5>{resourceName}</h5>
         <p>{resourceDescription}</p>
@@ -28,11 +28,16 @@ const ResourceCard = (props) => {
           <div>
             <button
               className="btn btn-primary"
+              style={{ margin: "0 5px" }}
               onClick={() => handleDownload(resourceName, resourceLink)}
             >
               Open
             </button>
-            <button className="btn btn-danger" onClick={() => handleDelete()}>
+            <button
+              className="btn btn-danger"
+              style={{ margin: "0 5px" }}
+              onClick={() => handleDelete()}
+            >
               Delete
             </button>
           </div>

@@ -1,0 +1,8 @@
+.form-input input {
+    width: 300px;
+    margin: 10px 0px;
+}
+
+.form-input input, .form-input textarea {
+    outline: none;
+}
