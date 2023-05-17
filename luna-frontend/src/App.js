@@ -20,14 +20,16 @@ import Layout from "./Components/Layout/Layout";
 import CoursePage from "./Pages/CoursePage/CoursePage";
 import AssignmentSubmission from "./Pages/AssignmentSubmission/AssignmentSubmission";
 import TeacherHome from "./Teacher/Home";
-import TeacherAttendance from "./Teacher/Attendance";
+import TeacherAttendance from "./Teacher/Attendance/Attendance";
 import TeacherCourses from "./Teacher/Courses/Courses";
-import TeacherMarks from "./Teacher/Marks";
+import TeacherMarks from "./Teacher//Marks/Marks";
 import TeacherGradeChangeRequest from "./Teacher/GradeChangeRequest";
 import ProtectedRoute from "./Components/ProtectedRoute";
 import TeacherCoursePage from "./Teacher/CoursePage/CoursePage";
 import TeacherAssignmentSubmission from "./Teacher/AssignmentSubmission/AssignmentSubmission";
 import TeacherSubmissionDetails from "./Teacher/SubmissionDetails/SubmissionDetails";
+import AddAttendance from "./Teacher/AddAttendance/AddAttendance";
+import AddMarks from "./Teacher/AddMarks/AddMarks";
 
 function App() {
   const [theme, colorMode] = useMode();
@@ -144,6 +146,14 @@ function App() {
                 element={
                   <ProtectedRoute Component={TeacherSubmissionDetails} />
                 }
+              />
+              <Route
+                path="teacher-add-attendance"
+                element={<ProtectedRoute Component={AddAttendance} />}
+              />
+              <Route
+                path="teacher-add-marks"
+                element={<ProtectedRoute Component={AddMarks} />}
               />
             </Route>
           </Routes>
