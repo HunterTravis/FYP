@@ -177,9 +177,9 @@ const CoursePage = () => {
                 <li>
                   <div>
                     <ResourceCard
-                      resourceName={resource.name}
+                      resourceName={resource.ResourceName}
                       resourceDescription={resource.description}
-                      resourceLink={resource.url}
+                      resourceLink={resource.ResourceURL}
                     />
                   </div>
                 </li>

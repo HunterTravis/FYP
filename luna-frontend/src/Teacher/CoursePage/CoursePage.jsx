@@ -209,7 +209,7 @@ const TeacherCoursePage = () => {
                 onClick={() => {
                   navigation("/teacher-content-creation", {
                     state: {
-                      type: "Announcement",
+                      type: "Announcement",courseCode: courseHead, section: section
                     },
                   });
                 }}
@@ -222,7 +222,7 @@ const TeacherCoursePage = () => {
                 onClick={() => {
                   navigation("/teacher-content-creation", {
                     state: {
-                      type: "Resource",
+                      type: "Resource", courseCode: courseHead, section: section
                     },
                   });
                 }}
@@ -234,7 +234,7 @@ const TeacherCoursePage = () => {
                 onClick={() => {
                   navigation("/teacher-content-creation", {
                     state: {
-                      type: "Assignment",
+                      type: "Assignment",courseCode: courseHead, section: section
                     },
                   });
                 }}

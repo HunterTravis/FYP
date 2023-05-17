@@ -20,10 +20,12 @@ const Courses = require("./routes/Student/Courses");
 const Marks = require("./routes/Student/Marks");
 const AssignmentSubmission = require("./routes/Student/AssignmentSubmission");
 const TeacherDeleteResource = require("./routes/Teacher/DeleteResource");
+const TeacherCreateAssignment = require("./routes/Teacher/CreateAssignment");
 
 
 
-app.use("/TeacherDeleteResource", TeacherDeleteResource)
+app.use("/TeacherCreate", TeacherCreateAssignment);
+app.use("/TeacherDeleteResource", TeacherDeleteResource);
 app.use("/TeacherCoursePage", TeacherCoursePage);
 app.use("/TeacherCourses", TeacherCourses);
 app.use("/coursePage", coursePage)
