@@ -9,7 +9,7 @@ const CourseRegistration = () => {
   const [offeredCourses, setOfferedCourses] = useState([]);
 
   const handleDelete = (studentId, courseCode) => {
-    const data = { username: studentId, courseCode: courseCode };
+    const data = { username: studentId, courseCode: courseCode};
 
     fetch("http://localhost:3001/CourseRegistration/delete", {
       method: "POST",
@@ -31,6 +31,7 @@ const CourseRegistration = () => {
   };
 
   const handleRegister = (studentId, courseCode, section) => {
+    
     fetch("http://localhost:3001/CourseRegistration/register", {
       method: "POST",
       headers: {

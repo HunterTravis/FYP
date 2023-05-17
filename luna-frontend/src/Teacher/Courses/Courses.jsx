@@ -10,25 +10,26 @@ function TeacherCourses(props) {
   const [courseData, setCourseData] = useState([]);
 
   useEffect(() => {
-    setCourseData(mockTeacherCourses);
-    // console.log("asd");
-    // fetch("http://localhost:3001/Courses", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify({
-    //     username: { username: cookies.username },
-    //   }),
-    // })
-    //   .then((response) => response.json())
-    //   .then((data) => {
-    //     console.log(data); // logs the list of objects
-    //     setCourseData(data);
-    //   })
-    //   .catch((error) => {
-    //     console.error("Error:", error);
-    //   });
+    fetch("http://localhost:3001/TeacherCourses", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", },
+      body: JSON.stringify( {username: cookies.username}),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        data = data.map((course,i) => {
+          return {
+            id: (i+1),
+            courseCode: course.courseCode,
+            courseName: course.courseName,
+            section: course.section,}
+          });
+          console.log(data);
+        setCourseData(data);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
   }, []);
 
   // const data = dummyData;
@@ -40,7 +41,7 @@ function TeacherCourses(props) {
           {courseData.map((course) => (
             <Link
               to="/teacher-course-page"
-              state={{ courseHead: course.courseName }}
+              state={{ courseHead: course.courseCode, section: course.section}}
             >
               <CourseCard key={course.id} {...course} />
             </Link>
