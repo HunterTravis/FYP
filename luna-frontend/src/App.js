@@ -26,6 +26,8 @@ import TeacherMarks from "./Teacher/Marks";
 import TeacherGradeChangeRequest from "./Teacher/GradeChangeRequest";
 import ProtectedRoute from "./Components/ProtectedRoute";
 import TeacherCoursePage from "./Teacher/CoursePage/CoursePage";
+import TeacherAssignmentSubmission from "./Teacher/AssignmentSubmission/AssignmentSubmission";
+import TeacherSubmissionDetails from "./Teacher/SubmissionDetails/SubmissionDetails";
 
 function App() {
   const [theme, colorMode] = useMode();
@@ -130,6 +132,18 @@ function App() {
               <Route
                 path="/teacher-course-page"
                 element={<ProtectedRoute Component={TeacherCoursePage} />}
+              />
+              <Route
+                path="teacher-assignment-submission"
+                element={
+                  <ProtectedRoute Component={TeacherAssignmentSubmission} />
+                }
+              />
+              <Route
+                path="teacher-submission-details"
+                element={
+                  <ProtectedRoute Component={TeacherSubmissionDetails} />
+                }
               />
             </Route>
           </Routes>
