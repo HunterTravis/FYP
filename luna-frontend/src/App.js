@@ -30,6 +30,7 @@ import TeacherAssignmentSubmission from "./Teacher/AssignmentSubmission/Assignme
 import TeacherSubmissionDetails from "./Teacher/SubmissionDetails/SubmissionDetails";
 import AddAttendance from "./Teacher/AddAttendance/AddAttendance";
 import AddMarks from "./Teacher/AddMarks/AddMarks";
+import TeacherContentCreaction from "./Teacher/ContentCreation/ContentCreation";
 
 function App() {
   const [theme, colorMode] = useMode();
@@ -154,6 +155,10 @@ function App() {
               <Route
                 path="teacher-add-marks"
                 element={<ProtectedRoute Component={AddMarks} />}
+              />
+              <Route
+                path="teacher-content-creation"
+                element={<ProtectedRoute Component={TeacherContentCreaction} />}
               />
             </Route>
           </Routes>
