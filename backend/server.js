@@ -10,6 +10,8 @@ app.use('/files', express.static('E:/'));
 const cors = require("cors");
 app.use(cors({ origin: "*" }));
 
+const TeacherCoursePage = require("./routes/Teacher/CoursePage");
+const TeacherCourses = require("./routes/Teacher/Courses");
 const CourseRegistrationData = require("./routes/Student/CourseRegistration");
 const authRoutes = require("./routes/auth");
 const coursePage = require("./routes/Student/CoursePage");
@@ -17,7 +19,13 @@ const Attendance = require("./routes/Student/Attendance");
 const Courses = require("./routes/Student/Courses");
 const Marks = require("./routes/Student/Marks");
 const AssignmentSubmission = require("./routes/Student/AssignmentSubmission");
+const TeacherDeleteResource = require("./routes/Teacher/DeleteResource");
 
+
+
+app.use("/TeacherDeleteResource", TeacherDeleteResource)
+app.use("/TeacherCoursePage", TeacherCoursePage);
+app.use("/TeacherCourses", TeacherCourses);
 app.use("/coursePage", coursePage)
 app.use("/AssignmentSubmission", AssignmentSubmission);
 app.use("/auth", authRoutes);

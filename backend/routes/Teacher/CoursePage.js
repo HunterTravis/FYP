@@ -7,29 +7,25 @@ router.use(bodyParser.json());
 
 
 router.post("/", async (req, res) => {
-    const courseCode = req.body.courseCode;
-    const section = req.body.section;
-    const data = {
-        assignments: [],
-        announcements: [],
-        resources: []
-    };
+    const {username,courseCode,section} = req.body;
+    const data={resources:[],assignments:[],announcements:[]};
+    
     await connection.query("SELECT AssignmentID, AssignmentName, AssignmentDescription, PostDate, DueDate, PostTime, DueTime, Status, Section, Semester FROM Assignments WHERE CourseCode = '"+courseCode+"' AND Section = '"+section+"';", (err, result) => {
         if (err) {
             console.log(err);
         } else {
             result.forEach((row) => {
                 data.assignments.push({
-                  id: row.AssignmentID,
-                  name: row.AssignmentName,
-                  description: row.AssignmentDescription,
-                  postDate: row.PostDate,
-                  dueDate: row.DueDate,
-                  postTime: row.PostTime,
-                  dueTime: row.DueTime,
-                  status: row.Status,
-                  section: row.Section,
-                  semester: row.Semester
+                  AssignmentID: row.AssignmentID,
+                  AssignmentName: row.AssignmentName,
+                  AssignmentDescription: row.AssignmentDescription,
+                  PostDate: row.PostDate,
+                  DueDate: row.DueDate,
+                  PostTime: row.PostTime,
+                  DueTime: row.DueTime,
+                  Status: row.Status,
+                  Section: row.Section,
+                  Semester: row.Semester
                 });
               });
         }
@@ -40,11 +36,12 @@ router.post("/", async (req, res) => {
         } else {
             result.forEach((row) => {
                 data.announcements.push({
-                  id: row.AnnouncementID,
-                  text: row.Text,
-                  date: row.Date,
-                  time: row.Time,
-                  teacherId: row.TeacherID
+                  AnnouncementID: row.AnnouncementID,
+                  Title:row.Title,
+                  Text: row.Text,
+                  Date: row.Date,
+                  Time: row.Time,
+                  TeacherID: row.TeacherID
                 });
               });
         }
@@ -55,7 +52,7 @@ router.post("/", async (req, res) => {
         } else {
             result.forEach((row) => {
                 data.resources.push({
-                  ResourcesID: row.ResourceID,
+                  ResourceID: row.ResourceID,
                   description: row.description,
                   ResourceName: row.ResourceName,
                   ResourceType: row.ResourceType,
@@ -69,7 +66,6 @@ router.post("/", async (req, res) => {
     });
     
     
-    }
-
+}
 );
 module.exports = router;
