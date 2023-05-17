@@ -58,8 +58,7 @@ const storage = multer.diskStorage({
     const submissionValues = [assignmentID, studentID, privateComment, getCurrentDateTime()];
   
     // Insert data into AssignmentSubmissionFiles table
-    const fileQuery =
-      "INSERT INTO AssignmentSubmissionFiles (FileName, SubmissionID) VALUES (?, ?)";
+    const fileQuery = "INSERT INTO AssignmentSubmissionFiles (FileName, SubmissionID) VALUES (?, ?)";
   
     connection.beginTransaction((err) => {
       if (err) {
