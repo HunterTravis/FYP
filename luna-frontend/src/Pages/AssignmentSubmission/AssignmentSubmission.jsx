@@ -24,18 +24,33 @@ function AssignmentSubmission() {
   // Function to handle adding files
   const handleAddFile = (e) => {
     const file = e.target.files[0];
-    setUserFiles((prevState) => [...prevState, file]);
+    const studentID = cookies.username;
+    const modifiedFileName = studentID + "_" + file.name; // Prepend studentID to the file name
+    const modifiedFile = new File([file], modifiedFileName, { type: file.type });
+    setUserFiles((prevState) => [...prevState, modifiedFile]);
   };
 
   // Function to handle submitting assignment
   const handleMarkAsDone = () => {
-    const studentID=cookies.username;
+    console.log(cookies.username);
+    const studentID = cookies.username;
+    const assignmentID = location.state.assignmentID; // Update this line to access the correct assignmentID value
+    const privateComment = privateComments;
+    const formData = new FormData();
+  
+    // Append userFiles to the FormData object
+    userFiles.forEach((file) => {
+      formData.append("files", file);
+    });
+  
+    // Append other data to the FormData object
+    formData.append("username", studentID);
+    formData.append("assignmentID", assignmentID);
+    formData.append("privateComment", privateComment);
+  
     fetch("http://localhost:3001/AssignmentSubmission", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({studentID,assignmentID,userFiles}),
+      body: formData,
     })
       .then((response) => response.json())
       .then((data) => {
@@ -48,7 +63,7 @@ function AssignmentSubmission() {
       .catch((error) => {
         console.log(error);
       });
-    // Submit userFiles and userComments to backend
+  
     // Reset state
     setUserFiles([]);
     setUserComments("");
