@@ -170,7 +170,8 @@ const TeacherCoursePage = () => {
                     <li>
                       <div>
                         <ResourceCard
-                          resourceName={resource.ResrouceName}
+                        resourceID={resource.ResourceID}
+                          resourceName={resource.ResourceName}
                           resourceDescription={resource.description}
                           resourceLink={resource.ResourceURL}
                         />
