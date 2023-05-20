@@ -61,36 +61,36 @@ const transcriptData = [
       },
     ],
   },
-  {
-    semesterNo: 3,
-    semesterName: "Fall 2022",
-    courses: [
-      {
-        code: "CS304",
-        cname: "Software Project Management",
-        chours: "3",
-        type: "Core",
-        point: 4.0,
-        grade: "A",
-      },
-      {
-        code: "CS404",
-        cname: "Software Quality Assurance",
-        chours: "3",
-        type: "Core",
-        point: 4.0,
-        grade: "A",
-      },
-      {
-        code: "CS504",
-        cname: "Software Reuse",
-        chours: "3",
-        type: "Elective",
-        point: 4.0,
-        grade: "A",
-      },
-    ],
-  },
+  // {
+  //   semesterNo: 3,
+  //   semesterName: "Fall 2022",
+  //   courses: [
+  //     {
+  //       code: "CS304",
+  //       cname: "Software Project Management",
+  //       chours: "3",
+  //       type: "Core",
+  //       point: 4.0,
+  //       grade: "A",
+  //     },
+  //     {
+  //       code: "CS404",
+  //       cname: "Software Quality Assurance",
+  //       chours: "3",
+  //       type: "Core",
+  //       point: 4.0,
+  //       grade: "A",
+  //     },
+  //     {
+  //       code: "CS504",
+  //       cname: "Software Reuse",
+  //       chours: "3",
+  //       type: "Elective",
+  //       point: 4.0,
+  //       grade: "A",
+  //     },
+  //   ],
+  // },
 ];
 
 const Transcript = () => {
@@ -98,7 +98,7 @@ const Transcript = () => {
     <div className="plan">
       <div className="container">
         <h1>Transcript</h1>
-        <TranscriptCard data={ transcriptData } />
+        <TranscriptCard data={transcriptData} />
       </div>
     </div>
   );

@@ -119,14 +119,14 @@ const Sidebar = ({ role }) => {
         {/* <div className="sidebar-item" tabIndex={-1}>
                 <Link to="/card-change">Card Issue Request</Link>
                 </div> */}
-        <Link to="/assignments" className="sidebar-link">
+        {/* <Link to="/assignments" className="sidebar-link">
           <div className="sidebar-item" tabIndex={-1}>
             <div className="sidebar-icon">
               <AssignmentLateIcon />
             </div>
             <div className="sidebar-text">Assignments</div>
           </div>
-        </Link>
+        </Link> */}
       </div>
     );
   } else if (role === "teacher") {
