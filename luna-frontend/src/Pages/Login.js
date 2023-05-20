@@ -1,16 +1,27 @@
 import "./Login.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
 
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [rememberMe, setRememberMe] = useState(false);
   const [cookies, setCookie] = useCookies(["user"]);
   const navigate = useNavigate();
 
+  useEffect(() => {
+    setUsername(localStorage.getItem('username'));
+    setPassword(localStorage.getItem('password'));
+  }, []);
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    
+
+
     fetch("http://localhost:3001/auth/login", {
       method: "POST",
       headers: {
@@ -26,6 +37,14 @@ const Login = () => {
           setCookie("LoggedIn", "true", { path: "/" });
           setCookie("role", data.role, { path: "/" });
           console.log(data.navigation);
+          if (rememberMe) {
+            // Store the user's credentials in local storage or any other secure storage
+            localStorage.setItem('username', username);
+            localStorage.setItem('password', password);
+          }
+          console.log(rememberMe);
+          console.log(localStorage.getItem('username'));
+          console.log(localStorage.getItem('password'));
           navigate(data.navigation);
         } else {
           alert(data.message);
@@ -49,36 +68,19 @@ const Login = () => {
           <h1 className="text-white login text-center">Login</h1>
           <form onSubmit={handleSubmit} className="loginForm">
             <div className="form-group">
-              <label htmlFor="InputEmail" className="text-white">
-                Username or Roll No:
-              </label>
-              <input
-                type="text"
-                className="form-control"
-                id="InputEmail"
-                placeholder="Enter username or roll number"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-              />
+              <TextField inputProps={{ style: { fontSize: '120%' } }} onChange={(e) => setUsername(e.target.value)} value={username} placeholder="Enter username or roll number" className="form-control" type="text" id="filled-basic InputEmail" label="Username or Rollno" variant="filled" />
             </div>
             <div className="form-group">
-              <label htmlFor="InputPassword" className="text-white  mt-2">
-                Password:
-              </label>
-              <input
-                type="password"
-                className="form-control"
-                id="InputPassword"
-                placeholder="********"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
+            <TextField inputProps={{ style: { fontSize: '120%' } }} style={{marginTop: '4%'}} className="form-control" type="password" onChange={(e) => setPassword(e.target.value)} value={password} id="filled-basic InputPassword" label="Password" variant="filled" />
+
             </div>
             <div className="form-check">
+              
               <input
                 type="checkbox"
                 className="form-check-input mt-2"
                 id="RememberMe"
+                onChange={(e) => setRememberMe(e.target.checked)}
               />
               <label
                 className="form-check-label text-white mt-1"
@@ -88,22 +90,14 @@ const Login = () => {
               </label>
             </div>
             <div className="form-check">
-              <input
-                type="checkbox"
-                className="form-check-input mt-2"
-                id="forgot"
-              />
-              <label
-                className="form-check-label text-white mt-1"
-                htmlFor="forgot"
-              >
-                Forget Password
-              </label>
+              <a href="/forgot" id="forgot" 
+                style={{fontWeight:'bold'}}>
+                Forgot Password
+                
+              </a>
             </div>
             <div className="text-center">
-              <button type="submit" className="btn btn-primary w-50 mt-3">
-                Login
-              </button>
+            <Button  type="submit" color="primary"  style={{ backgroundColor: 'rgb(0, 133, 249)' }} size="large" variant="contained">Login</Button>
             </div>
           </form>
         </div>

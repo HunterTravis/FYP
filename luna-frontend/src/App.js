@@ -31,140 +31,144 @@ import TeacherSubmissionDetails from "./Teacher/SubmissionDetails/SubmissionDeta
 import AddAttendance from "./Teacher/AddAttendance/AddAttendance";
 import AddMarks from "./Teacher/AddMarks/AddMarks";
 import TeacherContentCreaction from "./Teacher/ContentCreation/ContentCreation";
+import ScopedCssBaseline from '@mui/material/ScopedCssBaseline';
 
 function App() {
   const [theme, colorMode] = useMode();
   return (
-    <ColorModeContext.Provider value={colorMode}>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <div className="app">
-          <Routes>
-            <Route path="/" element={<Login />} />
-            <Route element={<Layout />}>
-              {/* <Route
+    <ScopedCssBaseline>
+
+      <ColorModeContext.Provider value={colorMode}>
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <div className="app">
+            <Routes>
+              <Route path="/" element={<Login />} />
+              <Route element={<Layout />}>
+                {/* <Route
                 path="/dashboard"
                 element={<ProtectedRoute Component={Dashboard} />}
               /> */}
-              <Route
-                path="/student-home"
-                element={<ProtectedRoute Component={StudentHome} />}
-              />
-              <Route
-                path="/registration"
-                element={<ProtectedRoute Component={CourseRegistration} />}
-              />
-              <Route
-                path="/assignments"
-                element={<ProtectedRoute Component={Assignments} />}
-              />
-              <Route
-                path="/attendance"
-                element={<ProtectedRoute Component={Attendance} />}
-              />
-              <Route
-                path="/courses"
-                element={<ProtectedRoute Component={Courses} />}
-              />
-              {/* <Route
+                <Route
+                  path="/student-home"
+                  element={<ProtectedRoute Component={StudentHome} />}
+                />
+                <Route
+                  path="/registration"
+                  element={<ProtectedRoute Component={CourseRegistration} />}
+                />
+                <Route
+                  path="/assignments"
+                  element={<ProtectedRoute Component={Assignments} />}
+                />
+                <Route
+                  path="/attendance"
+                  element={<ProtectedRoute Component={Attendance} />}
+                />
+                <Route
+                  path="/courses"
+                  element={<ProtectedRoute Component={Courses} />}
+                />
+                {/* <Route
                 path="/card-change"
                 element={<ProtectedRoute Component={Dashboard} />}
               /> */}
-              <Route
-                path="/feedback"
-                element={<ProtectedRoute Component={CourseFeedback} />}
-              />
-              <Route
-                path="/withdraw"
-                element={<ProtectedRoute Component={CourseWithdraw} />}
-              />
-              <Route
-                path="/fee-challan"
-                element={<ProtectedRoute Component={FeeChallan} />}
-              />
-              <Route
-                path="/fee-details"
-                element={<ProtectedRoute Component={FeeDetails} />}
-              />
-              <Route
-                path="/marks"
-                element={<ProtectedRoute Component={Marks} />}
-              />
-              <Route
-                path="/plan"
-                element={<ProtectedRoute Component={TentativeStudyPlan} />}
-              />
-              <Route
-                path="/grade-change"
-                element={<ProtectedRoute Component={GradeChangeRequest} />}
-              />
-              <Route
-                path="/transcript"
-                element={<ProtectedRoute Component={Transcript} />}
-              />
-              <Route
-                path="/coursePage"
-                element={<ProtectedRoute Component={CoursePage} />}
-              />
-              <Route
-                path="/assignmentSubmission"
-                element={<ProtectedRoute Component={AssignmentSubmission} />}
-              />
-              <Route
-                path="/teacher-home"
-                element={<ProtectedRoute Component={TeacherHome} />}
-              />
-              <Route
-                path="/teacher-attendance"
-                element={<ProtectedRoute Component={TeacherAttendance} />}
-              />
-              <Route
-                path="/teacher-courses"
-                element={<ProtectedRoute Component={TeacherCourses} />}
-              />
-              <Route
-                path="/teacher-marks"
-                element={<ProtectedRoute Component={TeacherMarks} />}
-              />
-              <Route
-                path="/teacher-grade-change"
-                element={
-                  <ProtectedRoute Component={TeacherGradeChangeRequest} />
-                }
-              />
-              <Route
-                path="/teacher-course-page"
-                element={<ProtectedRoute Component={TeacherCoursePage} />}
-              />
-              <Route
-                path="teacher-assignment-submission"
-                element={
-                  <ProtectedRoute Component={TeacherAssignmentSubmission} />
-                }
-              />
-              <Route
-                path="teacher-submission-details"
-                element={
-                  <ProtectedRoute Component={TeacherSubmissionDetails} />
-                }
-              />
-              <Route
-                path="teacher-add-attendance"
-                element={<ProtectedRoute Component={AddAttendance} />}
-              />
-              <Route
-                path="teacher-add-marks"
-                element={<ProtectedRoute Component={AddMarks} />}
-              />
-              <Route
-                path="teacher-content-creation"
-                element={<ProtectedRoute Component={TeacherContentCreaction} />}
-              />
-            </Route>
-          </Routes>
-        </div>
-      </ThemeProvider>
-    </ColorModeContext.Provider>
+                <Route
+                  path="/feedback"
+                  element={<ProtectedRoute Component={CourseFeedback} />}
+                />
+                <Route
+                  path="/withdraw"
+                  element={<ProtectedRoute Component={CourseWithdraw} />}
+                />
+                <Route
+                  path="/fee-challan"
+                  element={<ProtectedRoute Component={FeeChallan} />}
+                />
+                <Route
+                  path="/fee-details"
+                  element={<ProtectedRoute Component={FeeDetails} />}
+                />
+                <Route
+                  path="/marks"
+                  element={<ProtectedRoute Component={Marks} />}
+                />
+                <Route
+                  path="/plan"
+                  element={<ProtectedRoute Component={TentativeStudyPlan} />}
+                />
+                <Route
+                  path="/grade-change"
+                  element={<ProtectedRoute Component={GradeChangeRequest} />}
+                />
+                <Route
+                  path="/transcript"
+                  element={<ProtectedRoute Component={Transcript} />}
+                />
+                <Route
+                  path="/coursePage"
+                  element={<ProtectedRoute Component={CoursePage} />}
+                />
+                <Route
+                  path="/assignmentSubmission"
+                  element={<ProtectedRoute Component={AssignmentSubmission} />}
+                />
+                <Route
+                  path="/teacher-home"
+                  element={<ProtectedRoute Component={TeacherHome} />}
+                />
+                <Route
+                  path="/teacher-attendance"
+                  element={<ProtectedRoute Component={TeacherAttendance} />}
+                />
+                <Route
+                  path="/teacher-courses"
+                  element={<ProtectedRoute Component={TeacherCourses} />}
+                />
+                <Route
+                  path="/teacher-marks"
+                  element={<ProtectedRoute Component={TeacherMarks} />}
+                />
+                <Route
+                  path="/teacher-grade-change"
+                  element={
+                    <ProtectedRoute Component={TeacherGradeChangeRequest} />
+                  }
+                />
+                <Route
+                  path="/teacher-course-page"
+                  element={<ProtectedRoute Component={TeacherCoursePage} />}
+                />
+                <Route
+                  path="teacher-assignment-submission"
+                  element={
+                    <ProtectedRoute Component={TeacherAssignmentSubmission} />
+                  }
+                />
+                <Route
+                  path="teacher-submission-details"
+                  element={
+                    <ProtectedRoute Component={TeacherSubmissionDetails} />
+                  }
+                />
+                <Route
+                  path="teacher-add-attendance"
+                  element={<ProtectedRoute Component={AddAttendance} />}
+                />
+                <Route
+                  path="teacher-add-marks"
+                  element={<ProtectedRoute Component={AddMarks} />}
+                />
+                <Route
+                  path="teacher-content-creation"
+                  element={<ProtectedRoute Component={TeacherContentCreaction} />}
+                />
+              </Route>
+            </Routes>
+          </div>
+        </ThemeProvider>
+      </ColorModeContext.Provider>
+    </ScopedCssBaseline>
   );
 }
 
